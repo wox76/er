@@ -231,6 +231,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
+            // 2.5 Draw connection lines from the mouse cursor to nearby satellites to show connection
+            if (mouse.active) {
+                ctx.lineWidth = 0.6;
+                satellites.forEach(sat => {
+                    const dx = mouse.x - sat.x;
+                    const dy = mouse.y - sat.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    const maxMouseConnectDist = 200;
+                    if (dist < maxMouseConnectDist) {
+                        const opacity = (1 - dist / maxMouseConnectDist) * 0.38;
+                        ctx.strokeStyle = `rgba(232, 124, 62, ${opacity})`;
+                        ctx.beginPath();
+                        ctx.moveTo(mouse.x, mouse.y);
+                        ctx.lineTo(sat.x, sat.y);
+                        ctx.stroke();
+                    }
+                });
+            }
+
             // 3. Draw satellites (nodes)
             satellites.forEach(sat => {
                 ctx.fillStyle = 'rgba(232, 124, 62, 0.85)';
