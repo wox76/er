@@ -260,10 +260,16 @@
         </button>
       </div>
       <div class="video-container">
-        <video id="starling-video" autoplay loop muted playsinline controls style="width: 100%; height: auto; display: block; border-radius: 20px; object-fit: cover;">
+        <video id="starling-video" autoplay loop muted playsinline controls style="width: 100%; height: auto; display: block; border-radius: 20px 20px 0 0; object-fit: cover;">
           <source src="../data/starling_mid.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
+        <div class="video-credit" style="background: rgba(255, 255, 255, 0.015); padding: 16px 20px; display: flex; align-items: center; gap: 18px; border-top: 1px solid rgba(0, 210, 255, 0.15);">
+          <img src="../data/nasa.png" alt="NASA Logo" style="height: 38px; width: auto; opacity: 0.95; flex-shrink: 0;">
+          <p style="margin: 0; font-size: 13px; color: var(--muted); line-height: 1.45; font-family: var(--sans);">
+            Special thanks to NASA Ames Research Center and the NASA Starling Swarm Mission team for providing the orbital video footage and data.
+          </p>
+        </div>
       </div>
     </section>
 
