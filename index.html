@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EraDrive — Autonomy for Every Spacecraft</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#">
+      <img src="data/logo.png" alt="EraDrive Logo" style="height: 32px; width: auto; display: block;">
+    </a>
+    <nav class="nav" aria-label="Main Navigation">
+      <a href="#intro">Mission</a>
+      <a href="#sistema">Capabilities</a>
+      <a href="#lavorazioni">Problem</a>
+      <a href="#products">Products</a>
+      <a href="#team">Team</a>
+      <a href="#careers">Careers</a>
+      <a href="#contatti" class="nav-cta">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-card dark-hero" style="position: relative; overflow: hidden; background: #000;">
+      <video autoplay loop muted playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.65;">
+        <source src="data/video_hero.mp4" type="video/mp4">
+      </video>
+      <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(5,6,6,0.25), rgba(5,6,6,0.65)); z-index: 1;"></div>
+      <div class="hero-content" style="position: relative; z-index: 2;">
+        <div class="hero-logo-wrap" style="margin-bottom: 2.5rem;">
+          <img src="data/logo.png" alt="EraDrive Logo" style="height: clamp(60px, 8vw, 100px); width: auto;">
+        </div>
+        <h1>Autonomy for Every Spacecraft</h1>
+        <div style="margin-top: 3.5rem;">
+          <a href="https://www.eradrive.space/careers" target="_blank" class="button" style="text-transform: uppercase; letter-spacing: 0.05em; font-size: 18px; padding: 18px 48px;">We're Hiring!</a>
+        </div>
+      </div>
+      <a href="#intro" class="scroll-dot" aria-label="Scorri alla sezione successiva" style="z-index: 2;">↓</a>
+    </section>
+
+    <section id="intro" class="split-card section-card">
+      <div>
+        <p class="eyebrow"><span></span>Mission</p>
+        <h2>EraDrive AI</h2>
+      </div>
+      <div class="text-columns">
+        <p>EraDrive is a scalable, single-solution platform for space safety, performance, and defense. It streamlines space traffic management, on-orbit logistics, and advanced remote sensing.</p>
+        <p>Our AI-native architecture handles everything from deep learning perception and real-time trajectory optimization to automated collision avoidance, allowing partners to focus on their core mission while building a real-time, global space traffic intelligence network.</p>
+      </div>
+      <div class="glow glow-left"></div>
+    </section>
+
+    <section id="sistema" class="feature-section">
+      <div class="feature-copy">
+        <p class="eyebrow"><span></span>Core capabilities</p>
+        <h2>Why Choose Us?</h2>
+        <p style="margin: 15px 0 35px 0; color: rgba(245,241,232,.8); font-size: 18px; line-height: 1.45;">EraDrive's modular autonomy products reduce mission complexity, enabling partners to focus on their core mission.</p>
+        <div class="accordion-list">
+          <div class="accordion-item active">
+            <button class="accordion-trigger">Flight-Proven Autonomy <span class="accordion-icon">-</span></button>
+            <div class="accordion-content">
+              <p>TRL 9 autonomy with 5 heritage missions (12 satellites) across RPO, formation-flying, and swarming</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger">Modular, Compact, and Powerful <span class="accordion-icon">+</span></button>
+            <div class="accordion-content">
+              <p>Standardized software-hardware kits that integrate with any spacecraft bus via common interfaces</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger">AI-Native <span class="accordion-icon">+</span></button>
+            <div class="accordion-content">
+              <p>Deep learning perception, trajectory optimization, reasoning, and space traffic management built-in</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <figure class="media-card" style="border-radius: 24px; overflow: hidden; background: #000; border: 1px solid rgba(255,255,255,0.06);">
+        <video autoplay loop muted playsinline style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; border-radius: 24px;">
+          <source src="data/video_product.mp4" type="video/mp4">
+        </video>
+      </figure>
+    </section>
+
+
+    <section id="lavorazioni" class="cards-section dark-block">
+      <p class="eyebrow"><span></span>THE PROBLEM</p>
+      <h2>Three Pressing Problems in Spaceflight</h2>
+      <p class="section-lead">Legacy space infrastructure faces critical barriers across security, performance, and traffic management.</p>
+      <div class="cards-grid">
+        <article class="service-card">
+          <div class="card-number">01</div>
+          <div class="line-icon atom"></div>
+          <h3>Space is at War</h3>
+          <p style="margin-top: 20px; font-size: 16px; line-height: 1.5;">Legacy technology is not ready to counteract adversarial threats, to provide surprise or offense.<br><br><span style="color: var(--acid); font-weight: 500;">How to ensure autonomous navigation in GPS-denied adversarial environments?</span></p>
+        </article>
+        <article class="service-card">
+          <div class="card-number">02</div>
+          <div class="line-icon rings"></div>
+          <h3>Space is Demanding</h3>
+          <p style="margin-top: 20px; font-size: 16px; line-height: 1.5;">Outdated, rule-based, micromanaged, human-controlled systems are not able to meet requirements.<br><br><span style="color: var(--acid); font-weight: 500;">How to enable fully autonomous, multi-satellite prox ops and formation flight?</span></p>
+        </article>
+        <article class="service-card">
+          <div class="card-number">03</div>
+          <div class="line-icon nodes"></div>
+          <h3>Space is Crowded</h3>
+          <p style="margin-top: 20px; font-size: 16px; line-height: 1.5;">Outdated, ground-based, fragmented space traffic management systems put orbit safety at risk.<br><br><span style="color: var(--acid); font-weight: 500;">How to autonomously detect, track, and avoid collisions with over 1 million RSOs?</span></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="minimal-section section-card" style="padding-bottom: 90px; overflow: hidden;">
+      <p class="eyebrow"><span></span>Eradrive Space</p>
+      <h2>Ready to Fly Smarter?</h2>
+      <h3 style="font-family: var(--sans); font-size: clamp(22px, 2vw, 30px); font-weight: 500; margin-top: 20px; color: var(--cream); letter-spacing: -0.02em;">Let's Build Autonomous Space Together</h3>
+      <p style="margin-top: 15px; font-size: 18px; color: var(--muted); max-width: 650px; line-height: 1.5;">Schedule a call and see how EraDrive can de‑risk missions and unlock new capabilities.</p>
+      <div style="margin-top: 50px; display: flex; align-items: center; gap: 30px; flex-wrap: wrap; position: relative; z-index: 5;">
+        <a href="https://calendly.com/sumant-eradrive/30min" target="_blank" class="button" style="margin: 0; padding: 18px 48px; border-radius: 999px;">Schedule A Call</a>
+        <a href="mailto:contact@eradrive.com" style="font-family: var(--sans); font-size: 18px; color: var(--acid); font-weight: 600;">contact@eradrive.com</a>
+        <a href="https://www.linkedin.com/company/eradrive/" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 58px; height: 58px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.15); color: var(--text); background: rgba(255,255,255,0.03); transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--acid)'; this.style.color='var(--acid)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)'; this.style.color='var(--text)'">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+          </svg>
+        </a>
+      </div>
+      <div class="orb"></div>
+    </section>
+
+    <section id="products" class="cards-section dark-block" style="margin-top: 28px; padding-bottom: 60px;">
+      <p class="eyebrow"><span></span>PRODUCT SUITE</p>
+      <h2>Full-Stack Space Autonomy</h2>
+      <p class="section-lead" style="max-width: 900px; margin-bottom: 40px;">Modular, standardized, and dual-use — deployable into all layers of space mission design, integration, testing, and operations.</p>
+      
+      <!-- Horizontal scroll container -->
+      <div class="products-scroll-container" style="display: flex; gap: 24px; overflow-x: auto; padding: 20px 0 30px; scroll-snap-type: x mandatory; scrollbar-width: thin; -webkit-overflow-scrolling: touch;">
+        <!-- Product 1 -->
+        <article class="service-card" style="flex: 0 0 420px; min-height: 420px; scroll-snap-align: start; flex-shrink: 0;">
+          <div class="card-number">01</div>
+          <div style="position: absolute; top: 42px; right: 42px; font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--acid); letter-spacing: 0.1em; text-transform: uppercase;">ONBOARD</div>
+          <h3>Era Autonomous</h3>
+          <p style="margin-top: 20px; font-size: 16px; line-height: 1.5; color: rgba(245,241,232,.76);">RPO / FF / SSA software</p>
+        </article>
+        
+        <!-- Product 2 -->
+        <article class="service-card" style="flex: 0 0 420px; min-height: 420px; scroll-snap-align: start; flex-shrink: 0;">
+          <div class="card-number">02</div>
+          <div style="position: absolute; top: 42px; right: 42px; font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--acid); letter-spacing: 0.1em; text-transform: uppercase;">ONBOARD</div>
+          <h3>Era+ Low-SWaP kit</h3>
+          <p style="margin-top: 20px; font-size: 16px; line-height: 1.5; color: rgba(245,241,232,.76);">HDR camera + processor</p>
+        </article>
+
+        <!-- Product 3 -->
+        <article class="service-card" style="flex: 0 0 420px; min-height: 420px; scroll-snap-align: start; flex-shrink: 0;">
+          <div class="card-number">03</div>
+          <div style="position: absolute; top: 42px; right: 42px; font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--acid); letter-spacing: 0.1em; text-transform: uppercase;">ONBOARD</div>
+          <h3>Era Twin</h3>
+          <p style="margin-top: 20px; font-size: 16px; line-height: 1.5; color: rgba(245,241,232,.76);">High-fidelity digital & robotic twin</p>
+        </article>
+
+        <!-- Product 4 -->
+        <article class="service-card" style="flex: 0 0 420px; min-height: 420px; scroll-snap-align: start; flex-shrink: 0;">
+          <div class="card-number">04</div>
+          <div style="position: absolute; top: 42px; right: 42px; font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--acid); letter-spacing: 0.1em; text-transform: uppercase;">ONBOARD</div>
+          <h3>Era Ground</h3>
+          <p style="margin-top: 20px; font-size: 16px; line-height: 1.5; color: rgba(245,241,232,.76);">Cloud-based Era for automated ops</p>
+        </article>
+
+        <!-- Product 5 -->
+        <article class="service-card offboard-card" style="flex: 0 0 420px; min-height: 420px; scroll-snap-align: start; flex-shrink: 0;">
+          <div class="card-number">05</div>
+          <div class="product-badge">OFFBOARD</div>
+          <h3>Era AI</h3>
+          <p style="margin-top: 20px; font-size: 16px; line-height: 1.5;">AI foundation model for ops</p>
+        </article>
+
+        <!-- Product 6 -->
+        <article class="service-card offboard-card" style="flex: 0 0 420px; min-height: 420px; scroll-snap-align: start; flex-shrink: 0;">
+          <div class="card-number">06</div>
+          <div class="product-badge">OFFBOARD</div>
+          <h3>Era Data</h3>
+          <p style="margin-top: 20px; font-size: 16px; line-height: 1.5;">Aggregated low-latency space-object data</p>
+        </article>
+
+        <!-- Product 7 -->
+        <article class="service-card offboard-card" style="flex: 0 0 420px; min-height: 420px; scroll-snap-align: start; flex-shrink: 0;">
+          <div class="card-number">07</div>
+          <div class="product-badge">OFFBOARD</div>
+          <h3>Era Traffic</h3>
+          <p style="margin-top: 20px; font-size: 16px; line-height: 1.5;">Real-time traffic & domain insights</p>
+        </article>
+      </div>
+      
+      <!-- Subtly indicate scrolling behavior -->
+      <div style="text-align: right; color: var(--muted); font-size: 12px; font-family: var(--sans); letter-spacing: 0.05em; margin-top: 10px; display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
+        <span>SCROLL RIGHT TO VIEW MORE</span>
+        <span style="font-size: 16px;">→</span>
+      </div>
+    </section>
+
+    <section id="solutions" class="section-card" style="margin-top: 28px; background: #000; position: relative; overflow: hidden; min-height: 520px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; border: 1px solid rgba(255,255,255,0.06); border-radius: 26px;">
+      <!-- Planet curve horizon SVG -->
+      <svg viewBox="0 0 1440 200" preserveAspectRatio="none" style="position: absolute; top: 0; left: 0; width: 100%; height: 180px; pointer-events: none; z-index: 1;">
+        <defs>
+          <linearGradient id="planet-glow" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="rgba(232, 124, 62, 0.22)" />
+            <stop offset="100%" stop-color="rgba(232, 124, 62, 0)" />
+          </linearGradient>
+        </defs>
+        <!-- The curved planet atmosphere line -->
+        <path d="M 0,0 Q 720,130 1440,0" fill="none" stroke="rgba(255, 255, 255, 0.18)" stroke-width="2.5" />
+        <!-- Under-curve atmosphere orange glow -->
+        <path d="M 0,0 Q 720,130 1440,0 L 1440,200 L 0,200 Z" fill="url(#planet-glow)" opacity="0.35" />
+      </svg>
+      
+      <div class="planet-content" style="position: relative; z-index: 2; max-width: 950px; padding: 120px 24px 60px;">
+        <p class="eyebrow" style="justify-content: center; margin-bottom: 24px;"><span></span>Solutions</p>
+        <h2 style="font-family: var(--serif); font-size: clamp(32px, 4vw, 52px); line-height: 1.18; color: var(--text); font-weight: 400; margin-bottom: 25px;">
+          EraDrive provides compact, AI-driven modules for universal spacecraft autonomy
+        </h2>
+        <p style="font-size: 20px; line-height: 1.6; color: var(--muted); max-width: 820px; margin: 0 auto 40px; font-family: var(--sans);">
+          handling everything from navigation to collision avoidance. Our dual-use platform supports commercial and government missions while building a real-time, global space traffic intelligence network.
+      </div>
+    </section>
+
+
+
+    <section class="founders-section container" id="team" style="margin-top: 40px; padding: 80px 0;">
+      <p class="eyebrow"><span></span>FOUNDERS</p>
+      <div class="founders-intro">
+        <h2 style="font-family: var(--serif); font-size: clamp(36px, 5vw, 64px); line-height: 1.1; font-weight: 400; margin-bottom: 20px;">Three minds,<br>one trajectory.</h2>
+        <p style="font-size: 18px; color: var(--muted); line-height: 1.5; max-width: 700px;">A founding team fused from Stanford's aerospace lab — 23 years of distributed-satellite research and 12 satellites flown.</p>
+      </div>
+      
+      <div class="founders-grid">
+        <!-- Sumant Card -->
+        <div class="founder-card">
+          <div class="founder-img" style="background-image: url('data/sumant.avif');"></div>
+          <div class="founder-card-content">
+            <div class="founder-meta">
+              <h3>Sumant Sharma, PhD</h3>
+              <p>Co-founder & Chief Executive</p>
+            </div>
+            <a href="https://www.linkedin.com/in/sumantsharma/" target="_blank" class="founder-plus-btn">+</a>
+          </div>
+        </div>
+        
+        <!-- Justin Card -->
+        <div class="founder-card">
+          <div class="founder-img" style="background-image: url('data/justin.png');"></div>
+          <div class="founder-card-content">
+            <div class="founder-meta">
+              <h3>Justin Kruger, PhD</h3>
+              <p>Co-founder & Chief Technology</p>
+            </div>
+            <a href="https://www.linkedin.com/in/justinjessada/" target="_blank" class="founder-plus-btn">+</a>
+          </div>
+        </div>
+        
+        <!-- Simone Card -->
+        <div class="founder-card">
+          <div class="founder-img" style="background-image: url('data/simone.avif');"></div>
+          <div class="founder-card-content">
+            <div class="founder-meta">
+              <h3>Simone D’Amico, PhD</h3>
+              <p>Co-founder & Chief Science</p>
+            </div>
+            <a href="https://www.linkedin.com/in/damicosimone/" target="_blank" class="founder-plus-btn">+</a>
+          </div>
+        </div>
+      </div>
+      
+
+    </section>
+
+    <section class="careers-section container" id="careers" style="margin-top: 40px; padding: 80px 0; border-bottom: 1px solid var(--border-color);">
+      <p class="eyebrow"><span></span>Careers</p>
+      <h2 style="font-family: var(--serif); font-size: clamp(36px, 5vw, 64px); line-height: 1.1; font-weight: 400; margin-bottom: 50px;">Open positions</h2>
+      
+      <div class="careers-grid-new">
+        <!-- Card 1 -->
+        <article class="service-card" style="display: flex; flex-direction: column; justify-content: space-between; min-height: 320px; padding: 42px;">
+          <div>
+            <div class="card-number" style="font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--muted); margin-bottom: 15px;">Full Time • Palo Alto</div>
+            <h3 style="font-family: var(--serif); font-size: 26px; font-weight: 400; line-height: 1.25; color: var(--text); margin-top: 0; letter-spacing: -0.02em;">GNC Engineer</h3>
+          </div>
+          <div style="margin-top: 30px;">
+            <a href="https://www.eradrive.space/gnc-engineer" target="_blank" class="button" style="padding: 12px 28px; border-radius: 999px; font-size: 14px; display: inline-block; text-align: center; margin: 0; width: 100%;">Learn More</a>
+          </div>
+        </article>
+        <!-- Card 2 -->
+        <article class="service-card" style="display: flex; flex-direction: column; justify-content: space-between; min-height: 320px; padding: 42px;">
+          <div>
+            <div class="card-number" style="font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--muted); margin-bottom: 15px;">Full Time • Palo Alto</div>
+            <h3 style="font-family: var(--serif); font-size: 26px; font-weight: 400; line-height: 1.25; color: var(--text); margin-top: 0; letter-spacing: -0.02em;">Hardware and Embedded Test Engineer</h3>
+          </div>
+          <div style="margin-top: 30px;">
+            <a href="https://www.eradrive.space/hw-engineer" target="_blank" class="button" style="padding: 12px 28px; border-radius: 999px; font-size: 14px; display: inline-block; text-align: center; margin: 0; width: 100%;">Learn More</a>
+          </div>
+        </article>
+        <!-- Card 3 -->
+        <article class="service-card" style="display: flex; flex-direction: column; justify-content: space-between; min-height: 320px; padding: 42px;">
+          <div>
+            <div class="card-number" style="font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--muted); margin-bottom: 15px;">Full Time • Palo Alto</div>
+            <h3 style="font-family: var(--serif); font-size: 26px; font-weight: 400; line-height: 1.25; color: var(--text); margin-top: 0; letter-spacing: -0.02em;">Software Engineer</h3>
+          </div>
+          <div style="margin-top: 30px;">
+            <a href="https://www.eradrive.space/sw-engineer" target="_blank" class="button" style="padding: 12px 28px; border-radius: 999px; font-size: 14px; display: inline-block; text-align: center; margin: 0; width: 100%;">Learn More</a>
+          </div>
+        </article>
+        <!-- Card 4 -->
+        <article class="service-card" style="display: flex; flex-direction: column; justify-content: space-between; min-height: 320px; padding: 42px;">
+          <div>
+            <div class="card-number" style="font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--muted); margin-bottom: 15px;">Full Time • Palo Alto</div>
+            <h3 style="font-family: var(--serif); font-size: 26px; font-weight: 400; line-height: 1.25; color: var(--text); margin-top: 0; letter-spacing: -0.02em;">AI/ML Engineer</h3>
+          </div>
+          <div style="margin-top: 30px;">
+            <a href="https://www.eradrive.space/ai-engineer" target="_blank" class="button" style="padding: 12px 28px; border-radius: 999px; font-size: 14px; display: inline-block; text-align: center; margin: 0; width: 100%;">Learn More</a>
+          </div>
+        </article>
+        <!-- Card 5 -->
+        <article class="service-card" style="display: flex; flex-direction: column; justify-content: space-between; min-height: 320px; padding: 42px;">
+          <div>
+            <div class="card-number" style="font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--muted); margin-bottom: 15px;">Full Time, Part Time • Palo Alto</div>
+            <h3 style="font-family: var(--serif); font-size: 26px; font-weight: 400; line-height: 1.25; color: var(--text); margin-top: 0; letter-spacing: -0.02em;">Autonomy Internship (GNC, HW, SW, AI)</h3>
+          </div>
+          <div style="margin-top: 30px;">
+            <a href="https://www.eradrive.space/internship" target="_blank" class="button" style="padding: 12px 28px; border-radius: 999px; font-size: 14px; display: inline-block; text-align: center; margin: 0; width: 100%;">Learn More</a>
+          </div>
+        </article>
+        <!-- Card 6 -->
+        <article class="service-card" style="display: flex; flex-direction: column; justify-content: space-between; min-height: 320px; padding: 42px;">
+          <div>
+            <div class="card-number" style="font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--muted); margin-bottom: 15px;">Full Time, Part Time • Palo Alto</div>
+            <h3 style="font-family: var(--serif); font-size: 26px; font-weight: 400; line-height: 1.25; color: var(--text); margin-top: 0; letter-spacing: -0.02em;">Future Autonomy Opportunities</h3>
+          </div>
+          <div style="margin-top: 30px;">
+            <a href="mailto:contact@eradrive.com" class="button" style="padding: 12px 28px; border-radius: 999px; font-size: 14px; display: inline-block; text-align: center; margin: 0; width: 100%;">Submit CV</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Pagination controls (Inactive) -->
+      <div style="margin-top: 40px; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.015); padding: 18px 30px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.04); font-family: var(--sans); color: rgba(255,255,255,0.25);">
+        <a href="#" style="display: flex; align-items: center; gap: 8px; color: inherit; pointer-events: none; text-decoration: none;">
+          <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.04); color: inherit;">←</span> Previous
+        </a>
+        <div style="display: flex; gap: 15px; color: inherit;">
+          <span style="font-weight: 600; border-bottom: 2px solid rgba(255,255,255,0.1); padding-bottom: 2px;">1</span>
+          <span>2</span>
+        </div>
+        <a href="#" style="display: flex; align-items: center; gap: 8px; color: inherit; pointer-events: none; text-decoration: none;">
+          Next <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.04); color: inherit;">→</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="news-large" style="margin-top: 40px; padding: 80px 0; border-top: 1px solid rgba(255,255,255,0.06); position: relative; overflow: hidden;">
+      <div class="news-bg-grid" aria-hidden="true"></div>
+      <div class="news-inner">
+        <header class="news-header">
+          <div class="eyebrow">
+            <span></span>
+            MISSION BLOG
+          </div>
+          <div class="news-title-row">
+            <h2 class="section-title">Mission Blog</h2>
+            <a href="https://www.linkedin.com/company/eradrive" target="_blank" class="news-index">VIEW ALL <span>&rarr;</span></a>
+          </div>
+        </header>
+        <div class="news-grid">
+          <!-- Card 1 -->
+          <a href="#" class="ncard" data-kind="MISSION">
+            <div class="ncard-media">
+              <div class="ncard-img" style="background-image: url('data/stanford_news.png'); background-size: contain; background-repeat: no-repeat; background-position: center; background-color: #ffffff;"></div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta-row">
+                <span class="ncard-meta-tag">FIRESIDE CHAT</span>
+                <span class="ncard-meta-dot"></span>
+                <span class="ncard-meta-date">JUNE 1, 2026</span>
+              </div>
+              <h3>Sumant Sharma (CEO) presented at Stanford University</h3>
+              <p>Stanford Founders Club invites all students and researchers interested in aerospace entrepreneurship to a fireside chat with Sumant Sharma, Co-Founder & CEO of EraDrive and Stanford AeroAstro alumnus, followed by a networking evening. Sumant will share how research from the Stanford Space Rendezvous Lab spun out into a spacecraft autonomy startup, lessons on building in the space sector, and what technical and commercial opportunities are emerging in on-orbit services.</p>
+            </div>
+          </a>
+          <!-- Card 2 -->
+          <a href="#" class="ncard" data-kind="PROGRAM" data-external-url="https://mae.princeton.edu/" data-external-label="Continue to Princeton MAE">
+            <div class="ncard-media">
+              <div class="ncard-img" style="background-image: url('data/simone_news.png');"></div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta-row">
+                <span class="ncard-meta-tag">PRESENTATION</span>
+                <span class="ncard-meta-dot"></span>
+                <span class="ncard-meta-date">MAY 28, 2026</span>
+              </div>
+              <h3>Prof. Simone D’Amico, Co-Founder and CSO of EraDrive, to present at Princeton.</h3>
+              <p>Future multi-spacecraft missions require robust autonomous trajectory optimization capabilities to ensure safe and efficient rendezvous operations. This capability hinges on solving non-convex constrained optimal control problems in real time, however traditional iterative methods such as sequential convex programming impose significant computational challenges.</p>
+            </div>
+          </a>
+          <!-- Card 3 -->
+          <a href="#" class="ncard" data-kind="FACILITY" data-external-url="https://youtu.be/GgekVeaf6nk" data-external-label="Watch on YouTube">
+            <div class="ncard-media">
+              <div class="ncard-img" style="background-image: url('data/sumant_news.png');"></div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta-row">
+                <span class="ncard-meta-tag">PODCAST</span>
+                <span class="ncard-meta-dot"></span>
+                <span class="ncard-meta-date">MAY 25, 2026</span>
+              </div>
+              <h3>Sumant Sharma on podcast</h3>
+              <p>Sumant Sharma is the guest on our latest podcast episode. Don't miss it!</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="linkedin">
+      <div class="linkedin-inner">
+        <header class="news-header">
+          <div class="eyebrow">
+            <span></span>
+            ON LINKEDIN
+          </div>
+          <div class="news-title-row">
+            <h2 class="section-title">Follow Our Mission</h2>
+            <a href="https://www.linkedin.com/company/eradrive" target="_blank" rel="noopener noreferrer" class="news-index">VIEW ALL <span>&rarr;</span></a>
+          </div>
+        </header>
+        <div class="news-carousel-viewport">
+          <div class="news-carousel-track">
+            <!-- Slide 1 -->
+            <div class="news-slide">
+              <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7465815751485181952?collapsed=1" height="483" width="504" frameborder="0" allowfullscreen="" title="Post incorporato"></iframe>
+            </div>
+            <!-- Slide 2 -->
+            <div class="news-slide">
+              <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7463580146889814016?collapsed=1" height="755" width="504" frameborder="0" allowfullscreen="" title="Post incorporato"></iframe>
+            </div>
+            <!-- Slide 3 -->
+            <div class="news-slide">
+              <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7460699947219185665?collapsed=1" height="483" width="504" frameborder="0" allowfullscreen="" title="Post incorporato"></iframe>
+            </div>
+            <!-- Slide 4 -->
+            <div class="news-slide">
+              <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7454940116864647168?collapsed=1" height="755" width="504" frameborder="0" allowfullscreen="" title="Post incorporato"></iframe>
+            </div>
+            <!-- Slide 5 -->
+            <div class="news-slide">
+              <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7450962800866205697?collapsed=1" height="755" width="504" frameborder="0" allowfullscreen="" title="Post incorporato"></iframe>
+            </div>
+            <!-- Slide 6 -->
+            <div class="news-slide">
+              <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7448463515989925888?collapsed=1" height="755" width="504" frameborder="0" allowfullscreen="" title="Post incorporato"></iframe>
+            </div>
+          </div>
+        </div>
+        
+        <div class="carousel-controls">
+          <button class="carousel-btn prev-btn" aria-label="Previous posts">&#8249;</button>
+          <div class="carousel-indicators"></div>
+          <button class="carousel-btn next-btn" aria-label="Next posts">&#8250;</button>
+        </div>
+
+        <script>
+        (function initNewsCarousel() {
+          document.addEventListener('DOMContentLoaded', () => {
+            const track = document.querySelector('.news-carousel-track');
+            const slides = document.querySelectorAll('.news-slide');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            const indicators = document.querySelector('.carousel-indicators');
+            if (!track || slides.length === 0) return;
+
+            let currentIndex = 0;
+            
+            function getVisibleCount() {
+              if (window.innerWidth <= 768) return 1;
+              if (window.innerWidth <= 1024) return 2;
+              return 3;
+            }
+
+            function getMaxIndex() {
+              return Math.max(0, slides.length - getVisibleCount());
+            }
+
+            function rebuildIndicators() {
+              if (!indicators) return;
+              indicators.innerHTML = '';
+              const maxIndex = getMaxIndex();
+              for (let i = 0; i <= maxIndex; i++) {
+                const dot = document.createElement('button');
+                dot.className = `carousel-dot${i === currentIndex ? ' active' : ''}`;
+                dot.dataset.index = i;
+                dot.addEventListener('click', () => {
+                  currentIndex = i;
+                  updateCarousel();
+                });
+                indicators.appendChild(dot);
+              }
+            }
+
+            function updateCarousel() {
+              const maxIdx = getMaxIndex();
+              if (currentIndex > maxIdx) currentIndex = maxIdx;
+              if (currentIndex < 0) currentIndex = 0;
+
+              const slideWidth = slides[0].getBoundingClientRect().width;
+              const gap = 24;
+              const offset = currentIndex * (slideWidth + gap);
+              
+              track.style.transform = `translateX(-${offset}px)`;
+              
+              const dots = document.querySelectorAll('.carousel-dot');
+              dots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === currentIndex);
+              });
+            }
+
+            if (nextBtn) {
+              nextBtn.addEventListener('click', () => {
+                if (currentIndex < getMaxIndex()) {
+                  currentIndex++;
+                } else {
+                  currentIndex = 0;
+                }
+                updateCarousel();
+              });
+            }
+
+            if (prevBtn) {
+              prevBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                  currentIndex--;
+                } else {
+                  currentIndex = getMaxIndex();
+                }
+                updateCarousel();
+              });
+            }
+
+            window.addEventListener('resize', () => {
+              rebuildIndicators();
+              updateCarousel();
+            });
+
+            rebuildIndicators();
+            updateCarousel();
+          });
+        })();
+        </script>
+      </div>
+    </section>
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer id="footer">
+    <div class="footer-bg-grid" aria-hidden="true"></div>
+    <div class="footer-scanline" aria-hidden="true"></div>
+
+    <!-- Planet curve horizon SVG separator -->
+    <svg viewBox="0 0 1440 200" preserveAspectRatio="none" style="position: absolute; top: 0; left: 0; width: 100%; height: 160px; pointer-events: none; z-index: 2;">
+      <defs>
+        <linearGradient id="footer-planet-glow" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="rgba(232, 124, 62, 0.35)" />
+          <stop offset="100%" stop-color="rgba(232, 124, 62, 0)" />
+        </linearGradient>
+      </defs>
+      <path d="M 0,0 Q 720,130 1440,0" fill="none" stroke="rgba(255, 255, 255, 0.35)" stroke-width="3" />
+      <path d="M 0,0 Q 720,130 1440,0 L 1440,200 L 0,200 Z" fill="url(#footer-planet-glow)" opacity="0.55" />
+    </svg>
+
+    <!-- Main grid -->
+    <div class="footer-main">
+      <!-- Brand column: giant wordmark -->
+      <div class="footer-mark">
+        <div class="footer-logo-wrap" style="margin: 0rem 0 1rem; text-align: left;">
+          <img src="data/logo.png" alt="EraDrive Logo" style="height: 40px; width: auto; display: block;">
+        </div>
+        <p class="mark-tag">Autonomy for every spacecraft.</p>
+        <div class="mark-contact">
+          <a href="mailto:contact@eradrive.com" class="contact-card">
+            <span class="cc-label">TRANSMIT</span>
+            <span class="cc-value">contact@eradrive.com</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <div class="contact-card contact-coord">
+            <span class="cc-label">GROUND</span>
+            <span class="cc-value">37.44&deg;N &middot; 122.16&deg;W</span>
+            <span class="cc-sub">PALO ALTO, CA</span>
+          </div>
+        </div>
+      </div>
+      <!-- Nav grid: 3 columns -->
+      <div class="footer-nav-wrap">
+        <nav class="fnav-col" aria-label="Product">
+          <h4>// PRODUCT</h4>
+          <ul>
+            <li><a href="#intro">Platform</a></li>
+            <li><a href="#sistema">Capabilities</a></li>
+            <li><a href="#lavorazioni">Problem</a></li>
+            <li><a href="#products">Products</a></li>
+          </ul>
+        </nav>
+        <nav class="fnav-col" aria-label="Company">
+          <h4>// COMPANY</h4>
+          <ul>
+            <li><a href="#team">Founders</a></li>
+            <li><a href="#linkedin">Mission Blog</a></li>
+            <li><a href="#careers">Careers <em>5</em></a></li>
+          </ul>
+        </nav>
+        <nav class="fnav-col" aria-label="Connect">
+          <h4>// CONNECT</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/company/eradrive" target="_blank" rel="noopener">LinkedIn<span class="ext">↗</span></a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!-- Bottom -->
+    <div class="footer-bottom">
+      <div class="fb-left">
+        <span class="fb-logo-dot"></span>
+        <span>&copy; 2026 ERADRIVE, INC.</span>
+        <span class="fb-sep">//</span>
+        <span>All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══ NEWS MODAL POPUP ══ -->
+  <div id="news-modal" class="news-modal">
+    <div class="news-modal-overlay"></div>
+    <div class="news-modal-container">
+      <button id="news-modal-close" class="news-modal-close" aria-label="Close modal">&times;</button>
+      <div class="news-modal-media">
+        <div class="news-modal-img"></div>
+      </div>
+      <div class="news-modal-body">
+        <div class="news-modal-meta">
+          <span class="news-modal-tag"></span>
+          <span class="news-modal-dot"></span>
+          <span class="news-modal-date"></span>
+        </div>
+        <h2 class="news-modal-title"></h2>
+        <p class="news-modal-text"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+  <script>
+  (function(){
+    document.addEventListener('DOMContentLoaded', function() {
+      var modal = document.getElementById('news-modal');
+      if (!modal) return;
+      var overlay = modal.querySelector('.news-modal-overlay');
+      var closeBtn = document.getElementById('news-modal-close');
+      var modalImg = modal.querySelector('.news-modal-img');
+      var modalTag = modal.querySelector('.news-modal-tag');
+      var modalDate = modal.querySelector('.news-modal-date');
+      var modalTitle = modal.querySelector('.news-modal-title');
+      var modalText = modal.querySelector('.news-modal-text');
+
+      function openModal(card) {
+        var imgEl = card.querySelector('.ncard-img');
+        var bgImg = imgEl ? window.getComputedStyle(imgEl).backgroundImage : '';
+        var tag = card.querySelector('.ncard-meta-tag') ? card.querySelector('.ncard-meta-tag').textContent : '';
+        var date = card.querySelector('.ncard-meta-date') ? card.querySelector('.ncard-meta-date').textContent : '';
+        var title = card.querySelector('h3') ? card.querySelector('h3').textContent : '';
+        var text = card.querySelector('p') ? card.querySelector('p').innerHTML : '';
+        var extUrl = card.dataset.externalUrl || '';
+        var extLabel = card.dataset.externalLabel || '';
+
+        if (modalImg) {
+          modalImg.style.backgroundImage = bgImg;
+          if (bgImg.indexOf('stanford_news.png') !== -1) {
+            modalImg.style.backgroundSize = 'contain';
+            modalImg.style.backgroundRepeat = 'no-repeat';
+            modalImg.style.backgroundPosition = 'center';
+            modalImg.style.backgroundColor = '#ffffff';
+          } else {
+            modalImg.style.backgroundSize = '';
+            modalImg.style.backgroundRepeat = '';
+            modalImg.style.backgroundPosition = '';
+            modalImg.style.backgroundColor = '';
+          }
+        }
+        if (modalTag) modalTag.textContent = tag;
+        if (modalDate) modalDate.textContent = date;
+        if (modalTitle) modalTitle.textContent = title;
+
+        if (extUrl && extLabel) {
+          text += '<br><br><a href="' + extUrl + '" target="_blank" class="button" style="display: inline-block; margin-top: 1rem; padding: 12px 28px; font-size: 14px; text-decoration: none; border-radius: 999px;">' + extLabel + ' &rarr;</a>';
+        }
+        if (modalText) modalText.innerHTML = text;
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      document.addEventListener('click', function(e) {
+        var card = e.target.closest('.ncard');
+        if (card) {
+          e.preventDefault();
+          openModal(card);
+        }
+      });
+
+      if (closeBtn) closeBtn.addEventListener('click', closeModal);
+      if (overlay) overlay.addEventListener('click', closeModal);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeModal();
+      });
+    });
+  })();
+  </script>
+</body>
+</html>
