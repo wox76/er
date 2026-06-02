@@ -601,9 +601,10 @@ h3 { font-size: clamp(42px, 3.8vw, 72px); line-height: .96; }
 }
 
 @media (max-width: 640px) {
-  .site-header { margin-top: 12px; width: 94vw; }
-  .brand { font-size: 22px; }
-  .nav-cta { padding: 12px 16px; }
+  .site-header { margin-top: 12px; width: 94vw; padding: 10px 14px; }
+  .brand { font-size: 18px; }
+  .brand img { height: 22px !important; }
+  .nav-cta { padding: 8px 14px; font-size: 13px; }
   h1 { font-size: 42px; }
   h2 { font-size: 46px; }
   .hero { min-height: 560px; }
