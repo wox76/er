@@ -666,6 +666,7 @@ h3 { font-size: clamp(42px, 3.8vw, 72px); line-height: .96; }
   .cards-grid, .founders-grid, .careers-grid-new { grid-template-columns: 1fr; }
   .service-card h3 { margin-top: 90px; }
   .orb { opacity: .4; right: -60px; }
+  .text-columns { font-size: 17px !important; line-height: 1.55 !important; gap: 24px !important; }
 }
 
 @media (max-width: 640px) {
@@ -675,7 +676,7 @@ h3 { font-size: clamp(42px, 3.8vw, 72px); line-height: .96; }
   .nav-cta { padding: 8px 14px; font-size: 13px; }
   h1 { font-size: clamp(28px, 8vw, 38px) !important; line-height: 1.1 !important; }
   h2 { font-size: 46px; }
-  .text-columns { font-size: 16px !important; line-height: 1.55 !important; gap: 16px !important; }
+  .text-columns { font-size: 14px !important; line-height: 1.5 !important; gap: 14px !important; }
   .hero { min-height: 500px; }
   .hero-content { padding: 60px 16px !important; }
   .hero-logo-wrap { margin-bottom: 1.5rem !important; }
