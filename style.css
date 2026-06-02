@@ -538,8 +538,58 @@ h3 { font-size: clamp(42px, 3.8vw, 72px); line-height: .96; }
   width: 260px;
   height: 260px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(232,124,62,.22), rgba(232,124,62,.06) 58%, transparent 70%);
-  box-shadow: 0 0 90px rgba(232,124,62,.22);
+  background: radial-gradient(circle, rgba(232,124,62,.28) 0%, rgba(232,124,62,.08) 55%, transparent 70%);
+  box-shadow: 0 0 100px rgba(232,124,62,.3);
+  animation: pulseGlow 8s ease-in-out infinite alternate, floatOrb 12s ease-in-out infinite;
+}
+
+.orb::before {
+  content: '';
+  position: absolute;
+  inset: -30px;
+  border: 1px dashed rgba(232, 124, 62, 0.25);
+  border-radius: 50%;
+  animation: rotateRing 20s linear infinite;
+  pointer-events: none;
+}
+
+.orb::after {
+  content: '';
+  position: absolute;
+  inset: -60px;
+  border: 1px solid rgba(232, 124, 62, 0.1);
+  border-radius: 50%;
+  animation: rotateRing 30s linear infinite reverse;
+  pointer-events: none;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 80px rgba(232, 124, 62, 0.25), inset 0 0 30px rgba(255, 255, 255, 0.05);
+    background: radial-gradient(circle at 35% 35%, rgba(232,124,62,.32) 0%, rgba(232,124,62,.08) 60%, transparent 75%);
+  }
+  100% {
+    box-shadow: 0 0 140px rgba(232, 124, 62, 0.45), inset 0 0 50px rgba(255, 255, 255, 0.1);
+    background: radial-gradient(circle at 35% 35%, rgba(232,124,62,.42) 0%, rgba(232,124,62,.12) 50%, transparent 70%);
+  }
+}
+
+@keyframes floatOrb {
+  0%, 100% {
+    transform: translateY(-50%) translate(0, 0);
+  }
+  50% {
+    transform: translateY(-50%) translate(-15px, -15px);
+  }
+}
+
+@keyframes rotateRing {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .mission-banner {
