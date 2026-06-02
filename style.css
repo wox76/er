@@ -1166,6 +1166,12 @@ h3 { font-size: clamp(42px, 3.8vw, 72px); line-height: .96; }
   }
 }
 
+@media (max-width: 768px) {
+  .news-slide {
+    flex: 0 0 100%;
+  }
+}
+
 }
 
 /* ── COSMIC FOOTER ── */
