@@ -607,6 +607,7 @@ h3 { font-size: clamp(42px, 3.8vw, 72px); line-height: .96; }
   .nav-cta { padding: 8px 14px; font-size: 13px; }
   h1 { font-size: 42px; }
   h2 { font-size: 46px; }
+  #intro h2 { font-size: clamp(32px, 8vw, 42px) !important; }
   .hero { min-height: 560px; }
   .split-card, .feature-section, .cards-section, .minimal-section, .mission-banner { padding: 30px 22px; border-radius: 18px; }
   .service-card { padding: 24px !important; }
