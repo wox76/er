@@ -100,18 +100,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let mouse = { x: -1000, y: -1000, active: false };
 
-        introSection.addEventListener('mousemove', (e) => {
+        const updateInteractionCoords = (clientX, clientY) => {
             const rect = introSection.getBoundingClientRect();
-            mouse.x = e.clientX - rect.left;
-            mouse.y = e.clientY - rect.top;
+            mouse.x = clientX - rect.left;
+            mouse.y = clientY - rect.top;
             mouse.active = true;
-        });
+        };
 
-        introSection.addEventListener('mouseleave', () => {
+        const deactivateInteraction = () => {
             mouse.active = false;
             mouse.x = -1000;
             mouse.y = -1000;
+        };
+
+        // Mouse Listeners
+        introSection.addEventListener('mousemove', (e) => {
+            updateInteractionCoords(e.clientX, e.clientY);
         });
+
+        introSection.addEventListener('mouseleave', deactivateInteraction);
+
+        // Touch Listeners (Mobile & Tablet)
+        introSection.addEventListener('touchstart', (e) => {
+            if (e.touches && e.touches.length > 0) {
+                updateInteractionCoords(e.touches[0].clientX, e.touches[0].clientY);
+            }
+        }, { passive: true });
+
+        introSection.addEventListener('touchmove', (e) => {
+            if (e.touches && e.touches.length > 0) {
+                updateInteractionCoords(e.touches[0].clientX, e.touches[0].clientY);
+            }
+        }, { passive: true });
+
+        introSection.addEventListener('touchend', deactivateInteraction, { passive: true });
+        introSection.addEventListener('touchcancel', deactivateInteraction, { passive: true });
 
         function animateSwarm() {
             time += 1;
