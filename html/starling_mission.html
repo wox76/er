@@ -136,6 +136,56 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    .starling-video-card {
+      background: #071120;
+      margin-top: 28px;
+      position: relative;
+      padding: clamp(30px, 5vw, 60px);
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+      align-items: center;
+    }
+    
+    .video-cta-btn {
+      background: transparent;
+      border: 1px solid var(--starling-cyan);
+      color: var(--starling-cyan);
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(0, 210, 255, 0.1);
+    }
+    
+    .video-cta-btn:hover {
+      background: var(--starling-cyan);
+      color: #000;
+      box-shadow: 0 0 20px var(--starling-cyan);
+      transform: translateY(-2px);
+    }
+    
+    .video-container {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 210, 255, 0.2);
+      box-shadow: 0 12px 40px rgba(0, 210, 255, 0.15);
+      line-height: 0;
+    }
+
+    @media (max-width: 980px) {
+      .starling-video-card {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -184,6 +234,29 @@
             CesiumAstro S-Band SDR
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- VIDEO SECTION -->
+    <section class="section-card starling-video-card">
+      <div style="display: flex; flex-direction: column; justify-content: center; z-index: 2;">
+        <span class="badge-starling" style="margin-bottom: 16px; width: fit-content;">Mission Overview</span>
+        <h2 style="font-size: clamp(32px, 4vw, 54px); margin-bottom: 20px; color: var(--text);">Swarm Coordination</h2>
+        <p style="font-size: 18px; color: var(--muted); line-height: 1.6; margin-bottom: 30px;">
+          Watch real-time orbital flight operations and attitude telemetry of the Starling swarm. The video displays constellation dynamics and autonomous navigation experiments conducted in low Earth orbit.
+        </p>
+        <button id="fullscreen-video-btn" class="video-cta-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+          </svg>
+          Watch Fullscreen
+        </button>
+      </div>
+      <div class="video-container">
+        <video id="starling-video" autoplay loop muted playsinline controls style="width: 100%; height: auto; display: block; border-radius: 20px; object-fit: cover;">
+          <source src="../data/starling_mid.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </div>
     </section>
 
@@ -674,6 +747,21 @@
       document.querySelectorAll('.reveal').forEach(el => {
         observer.observe(el);
       });
+
+      // 3. Fullscreen video handler
+      const videoBtn = document.getElementById('fullscreen-video-btn');
+      const videoEl = document.getElementById('starling-video');
+      if (videoBtn && videoEl) {
+        videoBtn.addEventListener('click', () => {
+          if (videoEl.requestFullscreen) {
+            videoEl.requestFullscreen();
+          } else if (videoEl.webkitRequestFullscreen) { /* Safari */
+            videoEl.webkitRequestFullscreen();
+          } else if (videoEl.msRequestFullscreen) { /* IE11 */
+            videoEl.msRequestFullscreen();
+          }
+        });
+      }
     });
   </script>
 </body>
