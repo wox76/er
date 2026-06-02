@@ -154,23 +154,43 @@ document.addEventListener('DOMContentLoaded', () => {
                 sat.y += sat.vy;
             });
 
-            // 2. Draw connection lines between close satellites
+            // 2. Draw connection lines (ensure every satellite is connected to at least its 2 nearest neighbors)
             ctx.lineWidth = 0.5;
             for (let i = 0; i < satellites.length; i++) {
-                for (let j = i + 1; j < satellites.length; j++) {
-                    const s1 = satellites[i];
+                const s1 = satellites[i];
+                
+                // Find all neighbors and calculate distances
+                const neighbors = [];
+                for (let j = 0; j < satellites.length; j++) {
+                    if (i === j) continue;
                     const s2 = satellites[j];
                     const dx = s1.x - s2.x;
                     const dy = s1.y - s2.y;
                     const dist = Math.sqrt(dx * dx + dy * dy);
-                    const maxConnectDist = 130;
+                    neighbors.push({ node: s2, dist: dist });
+                }
+                neighbors.sort((a, b) => a.dist - b.dist);
 
-                    if (dist < maxConnectDist) {
-                        const opacity = (1 - dist / maxConnectDist) * 0.20;
+                // Connect to the 2 closest neighbors always
+                for (let k = 0; k < Math.min(2, neighbors.length); k++) {
+                    const n = neighbors[k];
+                    const opacity = n.dist > 250 ? 0.05 : 0.22 - (n.dist / 250) * 0.17;
+                    ctx.strokeStyle = `rgba(232, 124, 62, ${Math.max(0.04, opacity)})`;
+                    ctx.beginPath();
+                    ctx.moveTo(s1.x, s1.y);
+                    ctx.lineTo(n.node.x, n.node.y);
+                    ctx.stroke();
+                }
+
+                // Also draw proximity connections for other nodes within 130px
+                for (let k = 2; k < neighbors.length; k++) {
+                    const n = neighbors[k];
+                    if (n.dist < 130) {
+                        const opacity = (1 - n.dist / 130) * 0.18;
                         ctx.strokeStyle = `rgba(232, 124, 62, ${opacity})`;
                         ctx.beginPath();
                         ctx.moveTo(s1.x, s1.y);
-                        ctx.lineTo(s2.x, s2.y);
+                        ctx.lineTo(n.node.x, n.node.y);
                         ctx.stroke();
                     }
                 }
