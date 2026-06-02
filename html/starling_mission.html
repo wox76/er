@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Starling Mission — EraDrive</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    :root {
+      --starling-cyan: #00d2ff;
+      --starling-glow: rgba(0, 210, 255, 0.15);
+      --accent-orange: #e87c3e;
+      --card-bg: rgba(255, 255, 255, 0.02);
+      --card-border: rgba(255, 255, 255, 0.05);
+    }
+    
+    .starling-hero {
+      min-height: 500px;
+      position: relative;
+      display: grid;
+      place-items: center;
+      isolation: isolate;
+      background: linear-gradient(180deg, #071120 0%, #050505 100%);
+      border-radius: 26px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 210, 255, 0.15);
+      margin-top: 28px;
+    }
+    
+    .starling-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(circle at 20% 30%, rgba(0, 210, 255, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 80% 70%, rgba(232, 124, 62, 0.08) 0%, transparent 45%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .badge-starling {
+      background: var(--starling-glow);
+      color: var(--starling-cyan);
+      border: 1px solid var(--starling-cyan);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 24px;
+    }
+
+    .hardware-spec-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 40px;
+      justify-content: center;
+    }
+
+    .hw-badge {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(0, 210, 255, 0.25);
+      padding: 28px 40px;
+      border-radius: 20px;
+      font-size: 18px;
+      text-align: left;
+      font-family: var(--sans);
+      min-width: 280px;
+      box-shadow: 0 8px 32px rgba(0, 210, 255, 0.08);
+      backdrop-filter: blur(8px);
+      transition: all 0.3s ease;
+    }
+
+    .hw-badge:hover {
+      border-color: var(--starling-cyan);
+      background: rgba(255, 255, 255, 0.06);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(0, 210, 255, 0.15);
+    }
+
+    .hw-badge strong {
+      color: var(--starling-cyan);
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .exp-bullets {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 20px;
+      margin-top: 20px;
+    }
+
+    .exp-bullet {
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--muted);
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 24px;
+    }
+
+    .exp-bullet::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--starling-cyan);
+      font-weight: bold;
+    }
+
+    .exp-visual-box {
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(255, 255, 255, 0.01);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 280px;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* Scroll Reveal & Page load transitions */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html">
+      <img src="../data/logo.png" alt="EraDrive Logo" style="height: 32px; width: auto; display: block;">
+    </a>
+    <button class="menu-toggle" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="nav" aria-label="Main Navigation">
+      <a href="../index.html#intro">Mission</a>
+      <a href="../index.html#sistema">Capabilities</a>
+      <a href="../index.html#lavorazioni">Problem</a>
+      <a href="../index.html#products">Products</a>
+      <a href="#" class="active" style="color: var(--starling-cyan);">Starling Mission</a>
+      <a href="../index.html#team">Team</a>
+      <a href="../index.html#careers">Careers</a>
+      <a href="../index.html#contatti" class="nav-cta" style="background: var(--starling-cyan);">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="starling-hero">
+      <div class="hero-content" style="position: relative; z-index: 2; max-width: 1000px; padding: 60px 24px;">
+        <span class="badge-starling">Active Mission Operations</span>
+        <h1 style="color: var(--text); font-family: 'Quicksand', sans-serif;">Starling Mission</h1>
+        <p class="hero-text" style="color: rgba(245,241,232,0.85); font-size: 20px; max-width: 820px; margin: 24px auto 0; line-height: 1.5;">
+          The <img src="../data/nasa.png" alt="NASA" style="height: 64px; vertical-align: middle; margin: 0 14px 0 6px; display: inline-block;"> Starling swarm consists of 4 x 6U propulsive CubeSats in LEO, launched in July 2023. StarFOX (2023-24), StarFOX+ (2025), and FALCON (2026) experiments perform autonomous navigation and control.
+        </p>
+        
+        <div class="hardware-spec-list">
+          <div class="hw-badge">
+            <strong>Imaging</strong>
+            2 x BCT Nano Star Trackers (12x10° FoV)
+          </div>
+          <div class="hw-badge">
+            <strong>Compute</strong>
+            Xiphos Q7S ARM processor @ 700MHz
+          </div>
+          <div class="hw-badge">
+            <strong>Crosslink (optional)</strong>
+            CesiumAstro S-Band SDR
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: Relative Orbit Determination -->
+    <section class="split-card section-card" style="background: var(--panel); margin-top: 28px;">
+      <div style="display: flex; flex-direction: column; justify-content: center;">
+        <p class="eyebrow"><span style="background: var(--starling-cyan); box-shadow: 0 0 15px var(--starling-cyan);"></span>Experiment 01</p>
+        <h2 style="font-size: clamp(32px, 4vw, 54px); margin-bottom: 20px;">Autonomous Relative Orbit Determination</h2>
+        <p style="font-size: 18px; color: var(--muted); line-height: 1.6;">
+          Relative orbit determination for a persistent target, without prior knowledge of its orbit. Images are taken every 60 seconds and processed on board.
+        </p>
+        <div class="exp-bullets">
+          <div class="exp-bullet"><strong>Left:</strong> kinematic algorithm independently tracks new target (green square) in images.</div>
+          <div class="exp-bullet"><strong>Bottom right:</strong> orbit estimate for new target is initialized with &lt;10% range error.</div>
+          <div class="exp-bullet"><strong>Top right:</strong> orbit estimate is refined to meter-level errors (RN) and &lt;1% range error (T).</div>
+        </div>
+      </div>
+      <div class="exp-visual-box">
+        <svg viewBox="0 0 200 200" style="width: 80%; height: auto;">
+          <circle cx="100" cy="100" r="80" fill="none" stroke="rgba(0,210,255,0.1)" stroke-width="2"/>
+          <circle cx="100" cy="100" r="40" fill="none" stroke="rgba(0,210,255,0.2)" stroke-dasharray="4,4"/>
+          <!-- Target Tracker Graphic (Animated drift) -->
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0,0; 12,-8; -6,-14; 0,0" dur="8s" repeatCount="indefinite"/>
+            <rect x="135" y="75" width="12" height="12" fill="none" stroke="#00ff66" stroke-width="1.5" />
+            <line x1="141" y1="50" x2="141" y2="70" stroke="#00ff66" stroke-width="1" opacity="0.5"/>
+            <text x="141" y="98" fill="#00ff66" font-size="10" text-anchor="middle">Target</text>
+          </g>
+          <circle cx="100" cy="100" r="6" fill="var(--starling-cyan)"/>
+          <text x="100" y="120" fill="var(--muted)" font-size="10" text-anchor="middle">Host Satellite</text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Absolute Orbit Determination -->
+    <section class="split-card section-card" style="background: #0d0f14; margin-top: 28px;">
+      <div class="exp-visual-box">
+        <svg viewBox="0 0 200 200" style="width: 80%; height: auto;">
+          <!-- 4 Swarm Satellites sharing paths (Animated drift and crosslinks) -->
+          <g>
+            <!-- Satellites -->
+            <circle cx="50" cy="60" r="5" fill="var(--starling-cyan)">
+              <animate attributeName="cx" values="50;53;47;50" dur="6s" repeatCount="indefinite"/>
+              <animate attributeName="cy" values="60;57;63;60" dur="6s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="150" cy="60" r="5" fill="var(--starling-cyan)">
+              <animate attributeName="cx" values="150;147;153;150" dur="7s" repeatCount="indefinite"/>
+              <animate attributeName="cy" values="60;63;57;60" dur="7s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="60" cy="140" r="5" fill="var(--starling-cyan)">
+              <animate attributeName="cx" values="60;63;57;60" dur="8s" repeatCount="indefinite"/>
+              <animate attributeName="cy" values="140;137;143;140" dur="8s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="140" cy="140" r="5" fill="var(--starling-cyan)">
+              <animate attributeName="cx" values="140;137;143;140" dur="9s" repeatCount="indefinite"/>
+              <animate attributeName="cy" values="140;143;137;140" dur="9s" repeatCount="indefinite"/>
+            </circle>
+            
+            <!-- Crosslinks with data flow -->
+            <line x1="50" y1="60" x2="150" y2="60" stroke="#fff" stroke-width="1" stroke-dasharray="3,3" opacity="0.6">
+              <animate attributeName="x1" values="50;53;47;50" dur="6s" repeatCount="indefinite"/>
+              <animate attributeName="y1" values="60;57;63;60" dur="6s" repeatCount="indefinite"/>
+              <animate attributeName="x2" values="150;147;153;150" dur="7s" repeatCount="indefinite"/>
+              <animate attributeName="y2" values="60;63;57;60" dur="7s" repeatCount="indefinite"/>
+              <animate attributeName="stroke-dashoffset" values="0;-20" dur="2s" repeatCount="indefinite"/>
+            </line>
+            <line x1="50" y1="60" x2="60" y2="140" stroke="#fff" stroke-width="1" stroke-dasharray="3,3" opacity="0.6">
+              <animate attributeName="x1" values="50;53;47;50" dur="6s" repeatCount="indefinite"/>
+              <animate attributeName="y1" values="60;57;63;60" dur="6s" repeatCount="indefinite"/>
+              <animate attributeName="x2" values="60;63;57;60" dur="8s" repeatCount="indefinite"/>
+              <animate attributeName="y2" values="140;137;143;140" dur="8s" repeatCount="indefinite"/>
+              <animate attributeName="stroke-dashoffset" values="0;-20" dur="2.5s" repeatCount="indefinite"/>
+            </line>
+            <line x1="150" y1="60" x2="140" y2="140" stroke="#fff" stroke-width="1" stroke-dasharray="3,3" opacity="0.6">
+              <animate attributeName="x1" values="150;147;153;150" dur="7s" repeatCount="indefinite"/>
+              <animate attributeName="y1" values="60;63;57;60" dur="7s" repeatCount="indefinite"/>
+              <animate attributeName="x2" values="140;137;143;140" dur="9s" repeatCount="indefinite"/>
+              <animate attributeName="y2" values="140;143;137;140" dur="9s" repeatCount="indefinite"/>
+              <animate attributeName="stroke-dashoffset" values="0;-20" dur="2.2s" repeatCount="indefinite"/>
+            </line>
+            <line x1="60" y1="140" x2="140" y2="140" stroke="#fff" stroke-width="1" stroke-dasharray="3,3" opacity="0.6">
+              <animate attributeName="x1" values="60;63;57;60" dur="8s" repeatCount="indefinite"/>
+              <animate attributeName="y1" values="140;137;143;140" dur="8s" repeatCount="indefinite"/>
+              <animate attributeName="x2" values="140;137;143;140" dur="9s" repeatCount="indefinite"/>
+              <animate attributeName="y2" values="140;143;137;140" dur="9s" repeatCount="indefinite"/>
+              <animate attributeName="stroke-dashoffset" values="0;-20" dur="2.8s" repeatCount="indefinite"/>
+            </line>
+            
+            <circle cx="100" cy="100" r="90" fill="none" stroke="rgba(232, 124, 62, 0.15)" stroke-width="1"/>
+          </g>
+          <text x="100" y="20" fill="var(--starling-cyan)" font-size="10" text-anchor="middle">Crosslink Mesh</text>
+        </svg>
+      </div>
+      <div style="display: flex; flex-direction: column; justify-content: center;">
+        <p class="eyebrow"><span style="background: var(--starling-cyan); box-shadow: 0 0 15px var(--starling-cyan);"></span>Experiment 02</p>
+        <h2 style="font-size: clamp(32px, 4vw, 54px); margin-bottom: 20px;">Autonomous Absolute Orbit Determination</h2>
+        <p style="font-size: 18px; color: var(--muted); line-height: 1.6;">
+          Absolute orbit determination for a spacecraft swarm, using only inter-satellite bearing angles shared over a crosslink. Images are taken every 60 seconds and processed on board.
+        </p>
+        <div class="exp-bullets">
+          <div class="exp-bullet"><strong>Left:</strong> relative orbit geometry of involved swarm spacecraft. Black lines indicate crosslink transmissions.</div>
+          <div class="exp-bullet"><strong>Top:</strong> images from onboard star tracker cameras with objects tracked in the field of view.</div>
+          <div class="exp-bullet"><strong>Bottom:</strong> absolute (green) and relative (red/blue) orbit estimates for the swarm. Measurement sharing enables autonomous absolute orbit maintenance without GNSS.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: RSO Identification & Tracking -->
+    <section class="split-card section-card" style="background: var(--panel); margin-top: 28px;">
+      <div style="display: flex; flex-direction: column; justify-content: center;">
+        <p class="eyebrow"><span style="background: var(--starling-cyan); box-shadow: 0 0 15px var(--starling-cyan);"></span>Experiment 03</p>
+        <h2 style="font-size: clamp(32px, 4vw, 54px); margin-bottom: 20px;">Autonomous RSO Identification & Tracking</h2>
+        <p style="font-size: 18px; color: var(--muted); line-height: 1.6;">
+          Identification and tracking of transient resident space objects (RSOs) in the field of view. Images are taken every 60 seconds and processed on board.
+        </p>
+        <div class="exp-bullets">
+          <div class="exp-bullet"><strong>Left:</strong> uplinked Space-Track catalog is used to identify RSOs (white squares) in flight.</div>
+          <div class="exp-bullet"><strong>Top right:</strong> residuals between optical measurements of RSOs and their reference positions available from various ground products. Residuals are primarily &lt;100 m.</div>
+          <div class="exp-bullet"><strong>Bottom right:</strong> total number of identified RSOs (&gt;150 during this experiment).</div>
+        </div>
+      </div>
+      <div class="exp-visual-box">
+        <svg viewBox="0 0 200 200" style="width: 80%; height: auto;">
+          <!-- Camera Feed representation -->
+          <rect x="20" y="20" width="160" height="160" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+          
+          <!-- Scanning Sweep line -->
+          <line x1="20" y1="20" x2="180" y2="20" stroke="rgba(0, 210, 255, 0.4)" stroke-width="2">
+            <animate attributeName="y1" values="20;180;20" dur="4s" repeatCount="indefinite"/>
+            <animate attributeName="y2" values="20;180;20" dur="4s" repeatCount="indefinite"/>
+          </line>
+          
+          <!-- RSO highlights (Blinking) -->
+          <g>
+            <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+            <rect x="50" y="60" width="10" height="10" fill="none" stroke="#fff" stroke-width="1"/>
+            <rect x="130" y="110" width="10" height="10" fill="none" stroke="#fff" stroke-width="1"/>
+          </g>
+          <circle cx="55" cy="65" r="2" fill="var(--starling-cyan)"/>
+          <circle cx="135" cy="115" r="2" fill="var(--starling-cyan)"/>
+          
+          <text x="55" y="52" fill="#fff" font-size="8" text-anchor="middle">RSO-082</text>
+          <text x="135" y="102" fill="#fff" font-size="8" text-anchor="middle">RSO-144</text>
+          <text x="100" y="170" fill="rgba(255,255,255,0.3)" font-size="9" text-anchor="middle">Catalog Alignment</text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Multi-Observer Orbit Initialization -->
+    <section class="split-card section-card" style="background: #0d0f14; margin-top: 28px;">
+      <div class="exp-visual-box">
+        <svg viewBox="0 0 200 200" style="width: 80%; height: auto;">
+          <circle cx="60" cy="100" r="6" fill="var(--starling-cyan)"/>
+          <circle cx="140" cy="100" r="6" fill="var(--starling-cyan)"/>
+          <!-- target drifting -->
+          <circle cx="100" cy="50" r="4" fill="var(--accent-orange)">
+            <animate attributeName="cx" values="100;105;95;100" dur="5s" repeatCount="indefinite"/>
+          </circle>
+          
+          <!-- Sight lines tracking -->
+          <line x1="60" y1="100" x2="100" y2="50" stroke="var(--starling-cyan)" stroke-width="1" stroke-dasharray="3,3">
+            <animate attributeName="x2" values="100;105;95;100" dur="5s" repeatCount="indefinite"/>
+            <animate attributeName="stroke-dashoffset" values="0;-20" dur="2s" repeatCount="indefinite"/>
+          </line>
+          <line x1="140" y1="100" x2="100" y2="50" stroke="var(--starling-cyan)" stroke-width="1" stroke-dasharray="3,3">
+            <animate attributeName="x2" values="100;105;95;100" dur="5s" repeatCount="indefinite"/>
+            <animate attributeName="stroke-dashoffset" values="0;-20" dur="2s" repeatCount="indefinite"/>
+          </line>
+          <line x1="60" y1="100" x2="140" y2="100" stroke="#fff" stroke-width="1" opacity="0.4">
+            <animate attributeName="stroke-dashoffset" values="0;20" stroke-dasharray="2,2" dur="3s" repeatCount="indefinite"/>
+          </line>
+          
+          <text x="100" y="38" fill="var(--accent-orange)" font-size="9" text-anchor="middle">Unknown Target</text>
+          <text x="60" y="118" fill="var(--muted)" font-size="8" text-anchor="middle">Obs 1</text>
+          <text x="140" y="118" fill="var(--muted)" font-size="8" text-anchor="middle">Obs 2</text>
+        </svg>
+      </div>
+      <div style="display: flex; flex-direction: column; justify-content: center;">
+        <p class="eyebrow"><span style="background: var(--starling-cyan); box-shadow: 0 0 15px var(--starling-cyan);"></span>Experiment 04</p>
+        <h2 style="font-size: clamp(32px, 4vw, 54px); margin-bottom: 20px;">Multi-Observer Orbit Initialization</h2>
+        <p style="font-size: 18px; color: var(--muted); line-height: 1.6;">
+          Fast initial orbit determination for unknown targets. Two observers track a common target for ~20 minutes, and measurements are shared between observers over the crosslink. An orbit initialization is computed for the target object.
+        </p>
+        <div class="exp-bullets">
+          <div class="exp-bullet"><strong>Left:</strong> visualization of measurement geometry and algorithm progression.</div>
+          <div class="exp-bullet"><strong>Right:</strong> reconstructed images from the onboard cameras.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Tip-and-Cue (Persistent) -->
+    <section class="split-card section-card" style="background: var(--panel); margin-top: 28px;">
+      <div style="display: flex; flex-direction: column; justify-content: center;">
+        <p class="eyebrow"><span style="background: var(--starling-cyan); box-shadow: 0 0 15px var(--starling-cyan);"></span>Experiment 05</p>
+        <h2 style="font-size: clamp(32px, 4vw, 54px); margin-bottom: 20px;">Autonomous Tip-and-Cue (Persistent)</h2>
+        <p style="font-size: 18px; color: var(--muted); line-height: 1.6;">
+          Tip-and-cue for optical tracking of RSOs. Target state information is used on board to plan attitude changes which retain the target in the FOV. Images are taken every 60 seconds.
+        </p>
+        <div class="exp-bullets">
+          <div class="exp-bullet"><strong>Left:</strong> a target object of interest is identified, tracked, and centered in the camera image. More than 200 target measurements are collected over 1-day period.</div>
+          <div class="exp-bullet"><strong>Bottom right:</strong> the target’s relative orbit (green) is regularly outside of the camera FOV (grey cone). An attitude plan is computed online to enable consistent target observation.</div>
+        </div>
+      </div>
+      <div class="exp-visual-box">
+        <svg viewBox="0 0 200 200" style="width: 80%; height: auto;">
+          <!-- Field of View Cone (Sweeping left and right) -->
+          <g>
+            <animateTransform attributeName="transform" type="rotate" values="0 100 150; 12 100 150; -12 100 150; 0 100 150" dur="6s" repeatCount="indefinite"/>
+            <path d="M 100 150 L 50 40 L 150 40 Z" fill="rgba(0, 210, 255, 0.08)" stroke="var(--starling-cyan)" stroke-width="1" opacity="0.6"/>
+            <circle cx="100" cy="65" r="5" fill="var(--accent-orange)"/>
+            <line x1="100" y1="150" x2="100" y2="65" stroke="var(--accent-orange)" stroke-width="1" stroke-dasharray="2,2"/>
+          </g>
+          <text x="100" y="30" fill="var(--accent-orange)" font-size="9" text-anchor="middle">Centered Target</text>
+          <text x="100" y="168" fill="var(--muted)" font-size="8" text-anchor="middle">Sensor Origin</text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- SECTION 6: Tip-and-Cue (Opportunistic) -->
+    <section class="split-card section-card" style="background: #0d0f14; margin-top: 28px;">
+      <div class="exp-visual-box">
+        <svg viewBox="0 0 200 200" style="width: 80%; height: auto;">
+          <!-- Cone switches targets dynamically -->
+          <g>
+            <animateTransform attributeName="transform" type="rotate" values="0 100 150; -25 100 150; 25 100 150; 0 100 150" dur="9s" repeatCount="indefinite"/>
+            <path d="M 100 150 L 60 40 L 140 40 Z" fill="rgba(0, 210, 255, 0.08)" stroke="var(--starling-cyan)" stroke-width="1"/>
+            <circle cx="100" cy="60" r="4" fill="var(--accent-orange)"/>
+          </g>
+          <circle cx="50" cy="80" r="4" fill="rgba(255,255,255,0.2)"/>
+          <circle cx="150" cy="80" r="4" fill="rgba(255,255,255,0.2)"/>
+          <text x="100" y="30" fill="var(--accent-orange)" font-size="8" text-anchor="middle">Swapping Target Focus</text>
+          <text x="100" y="170" fill="var(--muted)" font-size="8" text-anchor="middle">Online Planning</text>
+        </svg>
+      </div>
+      <div style="display: flex; flex-direction: column; justify-content: center;">
+        <p class="eyebrow"><span style="background: var(--starling-cyan); box-shadow: 0 0 15px var(--starling-cyan);"></span>Experiment 06</p>
+        <h2 style="font-size: clamp(32px, 4vw, 54px); margin-bottom: 20px;">Autonomous Tip-and-Cue (Opportunistic)</h2>
+        <p style="font-size: 18px; color: var(--muted); line-height: 1.6;">
+          Tip-and-cue for optical tracking of RSOs. A list of RSOs to observe is provided to the satellite, which autonomously chooses an optimal target at each image epoch. Images are taken every 60 seconds.
+        </p>
+        <div class="exp-bullets">
+          <div class="exp-bullet"><strong>Left:</strong> target objects of interest are identified, tracked, and centered in the camera image. Measurements of more than 50 specified targets of interest are collected over a 1-day period.</div>
+          <div class="exp-bullet"><strong>Bottom right:</strong> the attitude of the camera FOV (grey cone) is controlled online to ensure the target of interest (green) is successfully imaged in the presence of other RSOs (red), maximizing field of regard.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: Alternative Optical Positioning (LEO) -->
+    <section class="split-card section-card" style="background: var(--panel); margin-top: 28px;">
+      <div style="display: flex; flex-direction: column; justify-content: center;">
+        <p class="eyebrow"><span style="background: var(--starling-cyan); box-shadow: 0 0 15px var(--starling-cyan);"></span>Experiment 07</p>
+        <h2 style="font-size: clamp(32px, 4vw, 54px); margin-bottom: 20px;">Alternative Optical Positioning (LEO)</h2>
+        <p style="font-size: 18px; color: var(--muted); line-height: 1.6;">
+          In-orbit demonstration of alternative PNT in LEO, independent from GPS/GNSS.
+        </p>
+        <div class="exp-bullets">
+          <div class="exp-bullet"><strong>Left:</strong> Resident Space Objects (RSOs) are detected and identified on board using an RSO catalog, and are leveraged as passive optical beacons to estimate the position of the host satellite in real time.</div>
+          <div class="exp-bullet"><strong>Bottom right:</strong> absolute orbit determination errors with respect to ex-post facto GPS products (black), the formal covariance from the on-board filter (gray), and the number of tracked RSO (red). Mean positioning errors are less than 100 m.</div>
+        </div>
+      </div>
+      <div class="exp-visual-box">
+        <svg viewBox="0 0 200 200" style="width: 80%; height: auto;">
+          <circle cx="100" cy="100" r="70" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+          <!-- Satellite in orbit using stars/RSOs as beacons (Drifting host) -->
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0,0; 15,3; -15,-3; 0,0" dur="8s" repeatCount="indefinite"/>
+            <circle cx="100" cy="30" r="5" fill="var(--starling-cyan)"/>
+            <line x1="100" y1="30" x2="50" y2="120" stroke="var(--starling-cyan)" stroke-width="1" stroke-dasharray="2,2"/>
+            <line x1="100" y1="30" x2="150" y2="130" stroke="var(--starling-cyan)" stroke-width="1" stroke-dasharray="2,2"/>
+          </g>
+          <circle cx="50" cy="120" r="3" fill="#fff"/>
+          <circle cx="150" cy="130" r="3" fill="#fff"/>
+          <text x="50" y="140" fill="var(--muted)" font-size="8" text-anchor="middle">RSO Beacon</text>
+          <text x="150" y="150" fill="var(--muted)" font-size="8" text-anchor="middle">RSO Beacon</text>
+          <text x="100" y="18" fill="var(--starling-cyan)" font-size="9" text-anchor="middle">Autonomous Host</text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- SECTION 8: Alternative Optical Positioning (GEO) -->
+    <section class="split-card section-card" style="background: #0d0f14; margin-top: 28px;">
+      <div class="exp-visual-box">
+        <svg viewBox="0 0 200 200" style="width: 80%; height: auto;">
+          <circle cx="100" cy="100" r="90" fill="none" stroke="rgba(255,255,255,0.08)" stroke-dasharray="3,3"/>
+          <circle cx="100" cy="100" r="30" fill="none" stroke="rgba(0, 210, 255, 0.15)"/>
+          
+          <!-- GEO Position rotating around the Earth -->
+          <g>
+            <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="20s" repeatCount="indefinite"/>
+            <circle cx="100" cy="10" r="6" fill="var(--starling-cyan)"/>
+            <line x1="100" y1="10" x2="100" y2="70" stroke="var(--starling-cyan)" stroke-width="1" stroke-dasharray="2,2"/>
+          </g>
+          <circle cx="100" cy="70" r="3" fill="#fff"/>
+          <text x="100" y="100" fill="rgba(255,255,255,0.2)" font-size="8" text-anchor="middle">Earth</text>
+          <text x="100" y="26" fill="var(--starling-cyan)" font-size="9" text-anchor="middle">GEO Host</text>
+        </svg>
+      </div>
+      <div style="display: flex; flex-direction: column; justify-content: center;">
+        <p class="eyebrow"><span style="background: var(--starling-cyan); box-shadow: 0 0 15px var(--starling-cyan);"></span>Experiment 08</p>
+        <h2 style="font-size: clamp(32px, 4vw, 54px); margin-bottom: 20px;">Alternative Optical Positioning (GEO)</h2>
+        <p style="font-size: 18px; color: var(--muted); line-height: 1.6;">
+          Simulation demonstration of alternative PNT in GEO, independent from GPS/GNSS.
+        </p>
+        <div class="exp-bullets">
+          <div class="exp-bullet"><strong>Left:</strong> Resident Space Objects (RSOs) are detected and identified on board using an RSO catalog, and are leveraged as passive optical beacons to estimate the position of the host satellite in real time.</div>
+          <div class="exp-bullet"><strong>Bottom right:</strong> absolute orbit determination errors with respect to ex-post facto GPS products (black), the formal covariance from the on-board filter (gray), and the number of tracked RSO (red). Mean positioning errors are less than 100 m.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: Proliferated Space Domain Awareness -->
+    <section class="split-card section-card" style="background: var(--panel); margin-top: 28px;">
+      <div style="display: flex; flex-direction: column; justify-content: center;">
+        <p class="eyebrow"><span style="background: var(--starling-cyan); box-shadow: 0 0 15px var(--starling-cyan);"></span>Experiment 09</p>
+        <h2 style="font-size: clamp(32px, 4vw, 54px); margin-bottom: 20px;">Proliferated Space Domain Awareness</h2>
+        <p style="font-size: 18px; color: var(--muted); line-height: 1.6;">
+          High-fidelity simulation of global space traffic monitoring (STM) performance via data aggregation from 400 EraDrive modules in orbit, distributed across existing satellite orbits.
+        </p>
+        <div class="exp-bullets">
+          <div class="exp-bullet"><strong>Left:</strong> simulated views of the LEO RSO population for four specific observers.</div>
+          <div class="exp-bullet"><strong>Top right:</strong> positions of RSOs (red), EraDrive modules (green) and specific observers (cyan).</div>
+          <div class="exp-bullet"><strong>Bottom right:</strong> number of measurements and RSO observations across the constellation.</div>
+        </div>
+      </div>
+      <div class="exp-visual-box">
+        <svg viewBox="0 0 200 200" style="width: 80%; height: auto;">
+          <circle cx="100" cy="100" r="60" fill="none" stroke="rgba(255,255,255,0.06)"/>
+          <circle cx="100" cy="100" r="70" fill="none" stroke="rgba(0, 210, 255, 0.1)"/>
+          <circle cx="100" cy="100" r="80" fill="none" stroke="rgba(232, 124, 62, 0.08)"/>
+          
+          <!-- Flashing Network mesh -->
+          <g opacity="0.6">
+            <circle cx="70" cy="50" r="2" fill="var(--starling-cyan)">
+              <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="130" cy="50" r="2" fill="var(--starling-cyan)">
+              <animate attributeName="opacity" values="1;0.3;1" dur="2.5s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="50" cy="110" r="2" fill="var(--starling-cyan)">
+              <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="150" cy="110" r="2" fill="var(--starling-cyan)">
+              <animate attributeName="opacity" values="1;0.4;1" dur="3.5s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="100" cy="160" r="2" fill="var(--starling-cyan)">
+              <animate attributeName="opacity" values="0.2;1;0.2" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            
+            <!-- Dynamic pulsing connection paths -->
+            <line x1="70" y1="50" x2="130" y2="50" stroke="var(--starling-cyan)" stroke-width="0.5" opacity="0.3">
+              <animate attributeName="opacity" values="0.1;0.6;0.1" dur="2s" repeatCount="indefinite"/>
+            </line>
+            <line x1="50" y1="110" x2="150" y2="110" stroke="var(--starling-cyan)" stroke-width="0.5" opacity="0.3">
+              <animate attributeName="opacity" values="0.1;0.6;0.1" dur="3s" repeatCount="indefinite"/>
+            </line>
+            <line x1="70" y1="50" x2="50" y2="110" stroke="var(--starling-cyan)" stroke-width="0.5" opacity="0.3">
+              <animate attributeName="opacity" values="0.6;0.1;0.6" dur="2.5s" repeatCount="indefinite"/>
+            </line>
+            <line x1="130" y1="50" x2="150" y2="110" stroke="var(--starling-cyan)" stroke-width="0.5" opacity="0.3">
+              <animate attributeName="opacity" values="0.1;0.7;0.1" dur="2.8s" repeatCount="indefinite"/>
+            </line>
+            <line x1="50" y1="110" x2="100" y2="160" stroke="var(--starling-cyan)" stroke-width="0.5" opacity="0.3">
+              <animate attributeName="opacity" values="0.7;0.1;0.7" dur="3.2s" repeatCount="indefinite"/>
+            </line>
+            <line x1="150" y1="110" x2="100" y2="160" stroke="var(--starling-cyan)" stroke-width="0.5" opacity="0.3">
+              <animate attributeName="opacity" values="0.1;0.7;0.1" dur="3.6s" repeatCount="indefinite"/>
+            </line>
+          </g>
+          <text x="100" y="104" fill="rgba(255,255,255,0.4)" font-size="9" text-anchor="middle" font-weight="bold">400 NODES</text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="minimal-section section-card" style="margin-top: 28px; background: linear-gradient(135deg, #050b14 0%, #050505 100%); border: 1px solid rgba(0, 210, 255, 0.15);">
+      <p class="eyebrow"><span style="background: var(--starling-cyan);"></span>Collaborate with us</p>
+      <h2>Ready to integrate swarm autonomy?</h2>
+      <p style="margin-top: 15px; font-size: 18px; color: var(--muted); max-width: 650px; line-height: 1.5;">
+        Deploy EraDrive autonomy software or low-SWaP hardware kits on your next mission and leverage flight-proven swarm coordination.
+      </p>
+      <div class="cta-actions-wrap" style="margin-top: 50px; display: flex; align-items: center; gap: 30px; flex-wrap: wrap;">
+        <a href="https://calendly.com/sumant-eradrive/30min" target="_blank" class="button" style="margin: 0; padding: 18px 48px; border-radius: 999px; background: var(--starling-cyan); color: #000;">Contact Eradrive Team</a>
+        <a href="../index.html" style="font-family: var(--sans); font-size: 18px; color: var(--muted); font-weight: 600;">&larr; Back to Home</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer id="footer">
+    <div class="footer-bg-grid" aria-hidden="true"></div>
+    <div class="footer-scanline" aria-hidden="true"></div>
+
+    <div class="footer-main">
+      <div class="footer-mark">
+        <div class="footer-logo-wrap" style="margin: 0rem 0 1rem; text-align: left;">
+          <img src="../data/logo.png" alt="EraDrive Logo" style="height: 40px; width: auto; display: block;">
+        </div>
+        <p class="mark-tag">Autonomy for every spacecraft.</p>
+        <div class="mark-contact">
+          <a href="mailto:contact@eradrive.com" class="contact-card">
+            <span class="cc-label">TRANSMIT</span>
+            <span class="cc-value">contact@eradrive.com</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-nav-wrap">
+        <nav class="fnav-col" aria-label="Product">
+          <h4>// PRODUCT</h4>
+          <ul>
+            <li><a href="../index.html#intro">Platform</a></li>
+            <li><a href="../index.html#sistema">Capabilities</a></li>
+            <li><a href="../index.html#lavorazioni">Problem</a></li>
+            <li><a href="../index.html#products">Products</a></li>
+            <li><a href="#" class="active" style="color: var(--starling-cyan);">Starling Mission</a></li>
+          </ul>
+        </nav>
+        <nav class="fnav-col" aria-label="Company">
+          <h4>// COMPANY</h4>
+          <ul>
+            <li><a href="../index.html#team">Founders</a></li>
+            <li><a href="../index.html#careers">Careers</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="fb-left">
+        <span class="fb-logo-dot"></span>
+        <span>&copy; 2026 ERADRIVE, INC.</span>
+        <span class="fb-sep">//</span>
+        <span>All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Structure the reveal classes dynamically
+      const heroContent = document.querySelector('.hero-content');
+      if (heroContent) {
+        // Stagger child elements of hero
+        Array.from(heroContent.children).forEach((child, index) => {
+          child.classList.add('reveal');
+          child.style.transitionDelay = `${index * 0.15}s`;
+        });
+      }
+
+      const hwBadges = document.querySelectorAll('.hw-badge');
+      hwBadges.forEach((badge, index) => {
+        badge.classList.add('reveal');
+        badge.style.transitionDelay = `${(index + 3) * 0.15}s`;
+      });
+
+      const sections = document.querySelectorAll('main > section:not(.starling-hero)');
+      sections.forEach((section) => {
+        // Stagger elements inside each section
+        const leftCol = section.children[0];
+        const rightCol = section.children[1];
+        if (leftCol) {
+          Array.from(leftCol.children).forEach((child, index) => {
+            child.classList.add('reveal');
+            child.style.transition = 'opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+            child.style.transitionDelay = `${index * 0.1}s`;
+          });
+        }
+        if (rightCol) {
+          rightCol.classList.add('reveal');
+          rightCol.style.transition = 'opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+          rightCol.style.transitionDelay = '0.2s';
+        }
+      });
+
+      // 2. Setup Intersection Observer to animate them
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      document.querySelectorAll('.reveal').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>
