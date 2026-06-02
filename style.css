@@ -685,6 +685,9 @@ h3 { font-size: clamp(42px, 3.8vw, 72px); line-height: .96; }
   .split-card, .feature-section, .cards-section, .minimal-section, .mission-banner { padding: 30px 22px; border-radius: 18px; }
   .service-card { padding: 24px !important; }
   .footer { flex-direction: column; }
+  .cta-actions-wrap { flex-direction: column !important; justify-content: center !important; align-items: center !important; text-align: center; gap: 20px !important; }
+  .linkedin-cta-link { width: 70px !important; height: 70px !important; }
+  .linkedin-cta-link svg { width: 34px !important; height: 34px !important; }
 }
 
 /* Lighter Careers Styling */
