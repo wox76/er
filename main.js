@@ -154,43 +154,78 @@ document.addEventListener('DOMContentLoaded', () => {
                 sat.y += sat.vy;
             });
 
-            // 2. Draw connection lines (ensure every satellite is connected to at least its 2 nearest neighbors)
+            // 2. Draw connection lines using a Minimum Spanning Tree (MST) to guarantee the swarm is always 100% connected
             ctx.lineWidth = 0.5;
-            for (let i = 0; i < satellites.length; i++) {
-                const s1 = satellites[i];
+            
+            const numNodes = satellites.length;
+            const inMST = new Array(numNodes).fill(false);
+            const minDist = new Array(numNodes).fill(Infinity);
+            const parent = new Array(numNodes).fill(-1);
+            
+            minDist[0] = 0;
+            
+            for (let step = 0; step < numNodes; step++) {
+                let u = -1;
+                let uDist = Infinity;
+                for (let i = 0; i < numNodes; i++) {
+                    if (!inMST[i] && minDist[i] < uDist) {
+                        uDist = minDist[i];
+                        u = i;
+                    }
+                }
                 
-                // Find all neighbors and calculate distances
-                const neighbors = [];
-                for (let j = 0; j < satellites.length; j++) {
-                    if (i === j) continue;
+                if (u === -1) break;
+                inMST[u] = true;
+                
+                for (let v = 0; v < numNodes; v++) {
+                    if (!inMST[v]) {
+                        const dx = satellites[u].x - satellites[v].x;
+                        const dy = satellites[u].y - satellites[v].y;
+                        const distSq = dx * dx + dy * dy;
+                        if (distSq < minDist[v]) {
+                            minDist[v] = distSq;
+                            parent[v] = u;
+                        }
+                    }
+                }
+            }
+
+            // Draw MST backbone connections (faded at longer distances, but always visible to keep them united)
+            for (let i = 1; i < numNodes; i++) {
+                const p = parent[i];
+                if (p !== -1) {
+                    const s1 = satellites[i];
+                    const s2 = satellites[p];
+                    const dx = s1.x - s2.x;
+                    const dy = s1.y - s2.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    const opacity = Math.max(0.04, 0.22 - (dist / 350) * 0.17);
+                    ctx.strokeStyle = `rgba(232, 124, 62, ${opacity})`;
+                    ctx.beginPath();
+                    ctx.moveTo(s1.x, s1.y);
+                    ctx.lineTo(s2.x, s2.y);
+                    ctx.stroke();
+                }
+            }
+
+            // Draw extra proximity lines (up to 130px) to build a richer mesh look
+            for (let i = 0; i < numNodes; i++) {
+                for (let j = i + 1; j < numNodes; j++) {
+                    // Skip if they are already connected via the MST backbone to avoid drawing twice
+                    if (parent[i] === j || parent[j] === i) continue;
+                    
+                    const s1 = satellites[i];
                     const s2 = satellites[j];
                     const dx = s1.x - s2.x;
                     const dy = s1.y - s2.y;
                     const dist = Math.sqrt(dx * dx + dy * dy);
-                    neighbors.push({ node: s2, dist: dist });
-                }
-                neighbors.sort((a, b) => a.dist - b.dist);
-
-                // Connect to the 2 closest neighbors always
-                for (let k = 0; k < Math.min(2, neighbors.length); k++) {
-                    const n = neighbors[k];
-                    const opacity = n.dist > 250 ? 0.05 : 0.22 - (n.dist / 250) * 0.17;
-                    ctx.strokeStyle = `rgba(232, 124, 62, ${Math.max(0.04, opacity)})`;
-                    ctx.beginPath();
-                    ctx.moveTo(s1.x, s1.y);
-                    ctx.lineTo(n.node.x, n.node.y);
-                    ctx.stroke();
-                }
-
-                // Also draw proximity connections for other nodes within 130px
-                for (let k = 2; k < neighbors.length; k++) {
-                    const n = neighbors[k];
-                    if (n.dist < 130) {
-                        const opacity = (1 - n.dist / 130) * 0.18;
+                    
+                    if (dist < 130) {
+                        const opacity = (1 - dist / 130) * 0.18;
                         ctx.strokeStyle = `rgba(232, 124, 62, ${opacity})`;
                         ctx.beginPath();
                         ctx.moveTo(s1.x, s1.y);
-                        ctx.lineTo(n.node.x, n.node.y);
+                        ctx.lineTo(s2.x, s2.y);
                         ctx.stroke();
                     }
                 }
