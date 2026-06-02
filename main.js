@@ -1,4 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // MOBILE MENU TOGGLE
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+    if (menuToggle && nav) {
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menuToggle.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+
+        // Close when clicking links
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+
+        // Close menu if clicking outside of the header/nav
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+            }
+        });
+    }
+
     // ACCORDION LOGIC
     const accordionItems = document.querySelectorAll('.accordion-item');
 
