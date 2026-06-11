@@ -55,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // SCROLL PARALLAX LOGIC
     const parallaxElements = [
-        { containerSelector: '.founder-card', imgSelector: '.founder-img', factor: 45 },
         { containerSelector: '.ncard', imgSelector: '.ncard-img', factor: 35 }
     ];
 
