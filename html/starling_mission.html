@@ -224,7 +224,7 @@
         <span class="badge-starling">Active Mission Operations</span>
         <h1 style="color: var(--text); font-family: 'Quicksand', sans-serif;">Starling Mission</h1>
         <p class="hero-text" style="color: rgba(245,241,232,0.85); font-size: 20px; max-width: 820px; margin: 24px auto 0; line-height: 1.5;">
-          The <img src="../data/nasa.png" alt="NASA" style="height: 64px; vertical-align: middle; margin: 0 14px 0 6px; display: inline-block;"> Starling swarm consists of 4 x 6U propulsive CubeSats in LEO, launched in July 2023. StarFOX (2023-24), StarFOX+ (2025), and FALCON (2026) experiments perform autonomous navigation and control.
+          The <img src="../data/nasa.png" alt="NASA" style="height: 64px; vertical-align: middle; margin: 0 14px 0 6px; display: inline-block;"> Starling swarm consists of 4 x 6U propulsive CubeSats in LEO, launched in July 2023. The StarFOX (2023-24), StarFOX+ (2025), Inspector (2025-26), and FALCON (2026) experiments perform autonomous navigation, control, and space domain awareness.
         </p>
         
         <div class="hardware-spec-list">
@@ -250,14 +250,16 @@
         <span class="badge-starling" style="margin-bottom: 16px; width: fit-content;">Mission Overview</span>
         <h2 style="font-size: clamp(32px, 4vw, 54px); margin-bottom: 20px;">Swarm Coordination</h2>
         <p style="font-size: 18px; color: var(--muted); line-height: 1.6; margin-bottom: 30px;">
-          Watch real-time orbital flight operations and attitude telemetry of the Starling swarm. The video displays constellation dynamics and autonomous navigation experiments conducted in low Earth orbit.
+          Track real-time orbital flight operations and attitude telemetry of the Starling swarm. Explore constellation dynamics and autonomous navigation experiments conducted in low Earth orbit.
         </p>
-        <button id="fullscreen-video-btn" class="video-cta-btn">
+        <a href="https://eyes.nasa.gov/apps/solar-system/#/sc_starling_1" target="_blank" class="video-cta-btn" style="text-decoration: none;">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
           </svg>
-          Watch Fullscreen
-        </button>
+          Watch Realtime
+        </a>
       </div>
       <div class="video-container">
         <video id="starling-video" autoplay loop muted playsinline controls style="width: 100%; height: auto; display: block; border-radius: 20px 20px 0 0; object-fit: cover;">
@@ -267,7 +269,7 @@
         <div class="video-credit" style="background: rgba(255, 255, 255, 0.015); padding: 16px 20px; display: flex; align-items: center; gap: 18px; border-top: 1px solid rgba(0, 210, 255, 0.15);">
           <img src="../data/nasa.png" alt="NASA Logo" style="height: 38px; width: auto; opacity: 0.95; flex-shrink: 0;">
           <p style="margin: 0; font-size: 13px; color: var(--muted); line-height: 1.45; font-family: var(--sans);">
-            Special thanks to NASA Ames Research Center and the NASA Starling Swarm Mission team for providing the orbital video footage and data.
+            Special thanks to NASA Ames Research Center and the NASA Starling Swarm Mission team for providing the orbital telemetry visualization and data.
           </p>
         </div>
       </div>
@@ -523,7 +525,7 @@
         <p class="eyebrow"><span style="background: var(--starling-cyan); box-shadow: 0 0 15px var(--starling-cyan);"></span>Experiment 07</p>
         <h2 style="font-size: clamp(32px, 4vw, 54px); margin-bottom: 20px;">Alternative Optical Positioning (LEO)</h2>
         <p style="font-size: 18px; color: var(--muted); line-height: 1.6;">
-          In-orbit demonstration of alternative PNT in LEO, independent from GPS/GNSS.
+          In-orbit demonstration of alternative PNT in LEO, independent from GPS/GNSS. Resident space objects are identified in images and are used as optical beacons for positioning.
         </p>
         <div class="exp-bullets">
           <div class="exp-bullet"><strong>Left:</strong> Resident Space Objects (RSOs) are detected and identified on board using an RSO catalog, and are leveraged as passive optical beacons to estimate the position of the host satellite in real time.</div>
@@ -646,7 +648,7 @@
     <!-- CALL TO ACTION -->
     <section class="minimal-section section-card" style="margin-top: 28px; background: linear-gradient(135deg, #050b14 0%, #050505 100%); border: 1px solid rgba(0, 210, 255, 0.15);">
       <p class="eyebrow"><span style="background: var(--starling-cyan);"></span>Collaborate with us</p>
-      <h2>Ready to integrate swarm autonomy?</h2>
+      <h2>Ready to Integrate Swarm Autonomy?</h2>
       <p style="margin-top: 15px; font-size: 18px; color: var(--muted); max-width: 650px; line-height: 1.5;">
         Deploy EraDrive autonomy software or low-SWaP hardware kits on your next mission and leverage flight-proven swarm coordination.
       </p>
@@ -761,20 +763,7 @@
         observer.observe(el);
       });
 
-      // 3. Fullscreen video handler
-      const videoBtn = document.getElementById('fullscreen-video-btn');
-      const videoEl = document.getElementById('starling-video');
-      if (videoBtn && videoEl) {
-        videoBtn.addEventListener('click', () => {
-          if (videoEl.requestFullscreen) {
-            videoEl.requestFullscreen();
-          } else if (videoEl.webkitRequestFullscreen) { /* Safari */
-            videoEl.webkitRequestFullscreen();
-          } else if (videoEl.msRequestFullscreen) { /* IE11 */
-            videoEl.msRequestFullscreen();
-          }
-        });
-      }
+
     });
   </script>
 </body>
