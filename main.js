@@ -177,26 +177,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const fx_spring = -k * (sat.x - driftX);
                 const fy_spring = -k * (sat.y - driftY);
 
-                // Mouse force (elastic pull towards cursor)
-                let fx_mouse = 0;
-                let fy_mouse = 0;
-                if (mouse.active) {
-                    const dx = mouse.x - sat.x;
-                    const dy = mouse.y - sat.y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-                    const maxDist = 220;
-                    if (dist < maxDist) {
-                        const force = (maxDist - dist) / maxDist; // 0 to 1
-                        const strength = 0.22; // pull factor
-                        fx_mouse = dx * force * strength;
-                        fy_mouse = dy * force * strength;
-                    }
-                }
-
                 // Damping/Friction for the elastic bouncy effect
                 const damping = 0.86;
-                sat.vx = (sat.vx + fx_spring + fx_mouse) * damping;
-                sat.vy = (sat.vy + fy_spring + fy_mouse) * damping;
+                sat.vx = (sat.vx + fx_spring) * damping;
+                sat.vy = (sat.vy + fy_spring) * damping;
 
                 // Move satellite
                 sat.x += sat.vx;
@@ -280,24 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            // 2.5 Draw connection lines from the mouse cursor to nearby satellites to show connection
-            if (mouse.active) {
-                ctx.lineWidth = 0.6;
-                satellites.forEach(sat => {
-                    const dx = mouse.x - sat.x;
-                    const dy = mouse.y - sat.y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-                    const maxMouseConnectDist = 200;
-                    if (dist < maxMouseConnectDist) {
-                        const opacity = (1 - dist / maxMouseConnectDist) * 0.38;
-                        ctx.strokeStyle = `rgba(232, 124, 62, ${opacity})`;
-                        ctx.beginPath();
-                        ctx.moveTo(mouse.x, mouse.y);
-                        ctx.lineTo(sat.x, sat.y);
-                        ctx.stroke();
-                    }
-                });
-            }
+
 
             // 3. Draw satellites (nodes)
             satellites.forEach(sat => {
