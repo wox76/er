@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Starling Mission — EraDrive</title>
+  <title>Starling Mission - EraDrive</title>
   <link rel="stylesheet" href="../style.css" />
   <style>
     :root {
@@ -213,7 +213,7 @@
       <a href="#" class="active" style="color: var(--starling-cyan);">Starling Mission</a>
       <a href="../index.html#team">Team</a>
       <a href="../index.html#careers">Careers</a>
-      <a href="../index.html#contatti" class="nav-cta" style="background: var(--starling-cyan);">Contact</a>
+      <a href="mailto:info@eradrive.space" class="nav-cta" style="background: var(--starling-cyan);">Contact</a>
     </nav>
   </header>
 
@@ -278,10 +278,10 @@
     <!-- SECTION 1: Relative Orbit Determination -->
     <section class="split-card section-card" style="background: var(--panel); margin-top: 28px;">
       <div style="display: flex; flex-direction: column; justify-content: center;">
-        <p class="eyebrow"><span style="background: var(--starling-cyan); box-shadow: 0 0 15px var(--starling-cyan);"></span>Experiment 01</p>
+        <p class="eyebrow"><span style="background: var(--starling-cyan); box-shadow: 0 0 15px var(--starling-cyan);"></span>EXPERIMENT 01</p>
         <h2 style="font-size: clamp(32px, 4vw, 54px); margin-bottom: 20px;">Autonomous Relative Orbit Determination</h2>
         <p style="font-size: 18px; color: var(--muted); line-height: 1.6;">
-          Relative orbit determination for a persistent target, without prior knowledge of its orbit. Images are taken every 60 seconds and processed on board.
+          <strong>Experiment 1 (2024):</strong> Relative orbit determination for a persistent target, without prior knowledge of its orbit. A kinematic algorithm independently tracks new targets in images, and batches of bearing angles are used to initialize a relative orbit estimate onboard. Target relative orbit estimates are refined in a sequential filter with steady-state position errors of &lt;0.5% of target range.
         </p>
         <div class="exp-bullets">
           <div class="exp-bullet"><strong>Left:</strong> kinematic algorithm independently tracks new target (green square) in images.</div>
@@ -366,10 +366,10 @@
         </svg>
       </div>
       <div style="display: flex; flex-direction: column; justify-content: center;">
-        <p class="eyebrow"><span style="background: var(--starling-cyan); box-shadow: 0 0 15px var(--starling-cyan);"></span>Experiment 02</p>
+        <p class="eyebrow"><span style="background: var(--starling-cyan); box-shadow: 0 0 15px var(--starling-cyan);"></span>EXPERIMENT 02</p>
         <h2 style="font-size: clamp(32px, 4vw, 54px); margin-bottom: 20px;">Autonomous Absolute Orbit Determination</h2>
         <p style="font-size: 18px; color: var(--muted); line-height: 1.6;">
-          Absolute orbit determination for a spacecraft swarm, using only inter-satellite bearing angles shared over a crosslink. Images are taken every 60 seconds and processed on board.
+          <strong>Experiment 2 (2024):</strong> Absolute orbit determination for a spacecraft swarm, using only inter-satellite bearing angles shared over a crosslink. Multi-observer measurements are seamlessly fused onboard to provide sufficient observability for autonomous maintenance of the swarm’s absolute orbit estimate, without GNSS.
         </p>
         <div class="exp-bullets">
           <div class="exp-bullet"><strong>Left:</strong> relative orbit geometry of involved swarm spacecraft. Black lines indicate crosslink transmissions.</div>
@@ -382,10 +382,10 @@
     <!-- SECTION 3: RSO Identification & Tracking -->
     <section class="split-card section-card" style="background: var(--panel); margin-top: 28px;">
       <div style="display: flex; flex-direction: column; justify-content: center;">
-        <p class="eyebrow"><span style="background: var(--starling-cyan); box-shadow: 0 0 15px var(--starling-cyan);"></span>Experiment 03</p>
+        <p class="eyebrow"><span style="background: var(--starling-cyan); box-shadow: 0 0 15px var(--starling-cyan);"></span>EXPERIMENT 03</p>
         <h2 style="font-size: clamp(32px, 4vw, 54px); margin-bottom: 20px;">Autonomous RSO Identification & Tracking</h2>
         <p style="font-size: 18px; color: var(--muted); line-height: 1.6;">
-          Identification and tracking of transient resident space objects (RSOs) in the field of view. Images are taken every 60 seconds and processed on board.
+          <strong>Experiment 3 (2025):</strong> Identification and tracking of transient resident space objects (RSOs) in the field of view (FOV). An uplinked RSO catalog is used to identify RSOs in images and match them to identities in the Space-Track database. Residuals between optical measurements of RSOs and their reference positions available from ground products are primarily &lt;100 m. Thousands of RSOs have been identified on board.
         </p>
         <div class="exp-bullets">
           <div class="exp-bullet"><strong>Left:</strong> uplinked Space-Track catalog is used to identify RSOs (white squares) in flight.</div>
@@ -450,10 +450,10 @@
         </svg>
       </div>
       <div style="display: flex; flex-direction: column; justify-content: center;">
-        <p class="eyebrow"><span style="background: var(--starling-cyan); box-shadow: 0 0 15px var(--starling-cyan);"></span>Experiment 04</p>
+        <p class="eyebrow"><span style="background: var(--starling-cyan); box-shadow: 0 0 15px var(--starling-cyan);"></span>EXPERIMENT 04</p>
         <h2 style="font-size: clamp(32px, 4vw, 54px); margin-bottom: 20px;">Multi-Observer Orbit Initialization</h2>
         <p style="font-size: 18px; color: var(--muted); line-height: 1.6;">
-          Fast initial orbit determination for unknown targets. Two observers track a common target for ~20 minutes, and measurements are shared between observers over the crosslink. An orbit initialization is computed for the target object.
+          <strong>Experiment 4 (2025):</strong> Fast initial orbit determination for unknown targets. Two observers track a common target for ~20 minutes, and measurements are shared between observers over the crosslink. An orbit initialization is computed for the target object. Orbit initialization errors were &lt;10% of target range.
         </p>
         <div class="exp-bullets">
           <div class="exp-bullet"><strong>Left:</strong> visualization of measurement geometry and algorithm progression.</div>
@@ -465,10 +465,10 @@
     <!-- SECTION 5: Tip-and-Cue (Persistent) -->
     <section class="split-card section-card" style="background: var(--panel); margin-top: 28px;">
       <div style="display: flex; flex-direction: column; justify-content: center;">
-        <p class="eyebrow"><span style="background: var(--starling-cyan); box-shadow: 0 0 15px var(--starling-cyan);"></span>Experiment 05</p>
+        <p class="eyebrow"><span style="background: var(--starling-cyan); box-shadow: 0 0 15px var(--starling-cyan);"></span>EXPERIMENT 05</p>
         <h2 style="font-size: clamp(32px, 4vw, 54px); margin-bottom: 20px;">Autonomous Tip-and-Cue (Persistent)</h2>
         <p style="font-size: 18px; color: var(--muted); line-height: 1.6;">
-          Tip-and-cue for optical tracking of RSOs. Target state information is used on board to plan attitude changes which retain the target in the FOV. Images are taken every 60 seconds.
+          <strong>Experiment 5 (2025):</strong> Tip-and-cue for optical tracking of RSOs. Target state information is used on board to plan attitude changes which center the target in the FOV. For a particular swarm target with relative motion outside of the nominal observer FOV, hundreds of measurements were collected over a 1-day period, enabling consistent observation.
         </p>
         <div class="exp-bullets">
           <div class="exp-bullet"><strong>Left:</strong> a target object of interest is identified, tracked, and centered in the camera image. More than 200 target measurements are collected over 1-day period.</div>
@@ -507,10 +507,10 @@
         </svg>
       </div>
       <div style="display: flex; flex-direction: column; justify-content: center;">
-        <p class="eyebrow"><span style="background: var(--starling-cyan); box-shadow: 0 0 15px var(--starling-cyan);"></span>Experiment 06</p>
+        <p class="eyebrow"><span style="background: var(--starling-cyan); box-shadow: 0 0 15px var(--starling-cyan);"></span>EXPERIMENT 06</p>
         <h2 style="font-size: clamp(32px, 4vw, 54px); margin-bottom: 20px;">Autonomous Tip-and-Cue (Opportunistic)</h2>
         <p style="font-size: 18px; color: var(--muted); line-height: 1.6;">
-          Tip-and-cue for optical tracking of RSOs. A list of RSOs to observe is provided to the satellite, which autonomously chooses an optimal target at each image epoch. Images are taken every 60 seconds.
+          <strong>Experiment 6 (2025):</strong> Tip-and-cue for optical tracking of RSOs. A list of RSOs to observe is provided to the satellite, which autonomously chooses an optimal target at each image epoch. The attitude of the camera is controlled online to ensure the target of interest is successfully imaged in the presence of other RSOs, maximizing field of regard. Measurements of more than 50 distinct targets of interest were collected over 1 day.
         </p>
         <div class="exp-bullets">
           <div class="exp-bullet"><strong>Left:</strong> target objects of interest are identified, tracked, and centered in the camera image. Measurements of more than 50 specified targets of interest are collected over a 1-day period.</div>
@@ -522,10 +522,10 @@
     <!-- SECTION 7: Alternative Optical Positioning (LEO) -->
     <section class="split-card section-card" style="background: var(--panel); margin-top: 28px;">
       <div style="display: flex; flex-direction: column; justify-content: center;">
-        <p class="eyebrow"><span style="background: var(--starling-cyan); box-shadow: 0 0 15px var(--starling-cyan);"></span>Experiment 07</p>
+        <p class="eyebrow"><span style="background: var(--starling-cyan); box-shadow: 0 0 15px var(--starling-cyan);"></span>EXPERIMENT 07</p>
         <h2 style="font-size: clamp(32px, 4vw, 54px); margin-bottom: 20px;">Alternative Optical Positioning (LEO)</h2>
         <p style="font-size: 18px; color: var(--muted); line-height: 1.6;">
-          In-orbit demonstration of alternative PNT in LEO, independent from GPS/GNSS. Resident space objects are identified in images and are used as optical beacons for positioning.
+          <strong>Experiment 7 (2026):</strong> In-orbit demonstration of alternative PNT in LEO, independent from GPS/GNSS. Resident space objects are detected and identified in images using an RSO catalog, and are leveraged as passive optical beacons to estimate the position of the host satellite in real time. Mean positioning errors are less than 100 m.
         </p>
         <div class="exp-bullets">
           <div class="exp-bullet"><strong>Left:</strong> Resident Space Objects (RSOs) are detected and identified on board using an RSO catalog, and are leveraged as passive optical beacons to estimate the position of the host satellite in real time.</div>
@@ -552,7 +552,7 @@
     </section>
 
     <!-- SECTION 8: Alternative Optical Positioning (GEO) -->
-    <section class="split-card section-card" style="background: #0d0f14; margin-top: 28px;">
+    <section class="split-card section-card" style="background: #0d0f14; margin-top: 28px; display: none;">
       <div class="exp-visual-box">
         <svg viewBox="0 0 200 200" style="width: 80%; height: auto;">
           <circle cx="100" cy="100" r="90" fill="none" stroke="rgba(255,255,255,0.08)" stroke-dasharray="3,3"/>
@@ -570,10 +570,10 @@
         </svg>
       </div>
       <div style="display: flex; flex-direction: column; justify-content: center;">
-        <p class="eyebrow"><span style="background: var(--starling-cyan); box-shadow: 0 0 15px var(--starling-cyan);"></span>Experiment 08</p>
-        <h2 style="font-size: clamp(32px, 4vw, 54px); margin-bottom: 20px;">Alternative Optical Positioning (GEO)</h2>
+        <p class="eyebrow"><span style="background: var(--starling-cyan); box-shadow: 0 0 15px var(--starling-cyan);"></span>EXPERIMENT 08</p>
+        <h2 style="font-size: clamp(32px, 4vw, 54px); margin-bottom: 20px;">Online Refinement of the RSO Catalog</h2>
         <p style="font-size: 18px; color: var(--muted); line-height: 1.6;">
-          Simulation demonstration of alternative PNT in GEO, independent from GPS/GNSS.
+          <strong>Experiment 8 (2026):</strong> Online refinement of the RSO catalog. Measurements of identified RSOs in images are used to update the observer’s RSO catalog information, to prevent orbit information from becoming stale and guarantee robust positioning over long time periods. When referenced against Starlink ephemeris, online refinement was shown to reduce Starlink position errors by 50%, compared to Space-Track two-line elements.
         </p>
         <div class="exp-bullets">
           <div class="exp-bullet"><strong>Left:</strong> Resident Space Objects (RSOs) are detected and identified on board using an RSO catalog, and are leveraged as passive optical beacons to estimate the position of the host satellite in real time.</div>
@@ -583,9 +583,9 @@
     </section>
 
     <!-- SECTION 9: Proliferated Space Domain Awareness -->
-    <section class="split-card section-card" style="background: var(--panel); margin-top: 28px;">
+    <section class="split-card section-card" style="background: var(--panel); margin-top: 28px; display: none;">
       <div style="display: flex; flex-direction: column; justify-content: center;">
-        <p class="eyebrow"><span style="background: var(--starling-cyan); box-shadow: 0 0 15px var(--starling-cyan);"></span>Experiment 09</p>
+        <p class="eyebrow"><span style="background: var(--starling-cyan); box-shadow: 0 0 15px var(--starling-cyan);"></span>EXPERIMENT 09</p>
         <h2 style="font-size: clamp(32px, 4vw, 54px); margin-bottom: 20px;">Proliferated Space Domain Awareness</h2>
         <p style="font-size: 18px; color: var(--muted); line-height: 1.6;">
           High-fidelity simulation of global space traffic monitoring (STM) performance via data aggregation from 400 EraDrive modules in orbit, distributed across existing satellite orbits.
@@ -647,7 +647,7 @@
 
     <!-- CALL TO ACTION -->
     <section class="minimal-section section-card" style="margin-top: 28px; background: linear-gradient(135deg, #050b14 0%, #050505 100%); border: 1px solid rgba(0, 210, 255, 0.15);">
-      <p class="eyebrow"><span style="background: var(--starling-cyan);"></span>Collaborate with us</p>
+      <p class="eyebrow"><span style="background: var(--starling-cyan);"></span>COLLABORATE WITH US</p>
       <h2>Ready to Integrate Swarm Autonomy?</h2>
       <p style="margin-top: 15px; font-size: 18px; color: var(--muted); max-width: 650px; line-height: 1.5;">
         Deploy EraDrive autonomy software or low-SWaP hardware kits on your next mission and leverage flight-proven swarm coordination.
@@ -671,9 +671,9 @@
         </div>
         <p class="mark-tag">Autonomy for every spacecraft.</p>
         <div class="mark-contact">
-          <a href="mailto:contact@eradrive.com" class="contact-card">
+          <a href="mailto:info@eradrive.space" class="contact-card">
             <span class="cc-label">TRANSMIT</span>
-            <span class="cc-value">contact@eradrive.com</span>
+            <span class="cc-value">info@eradrive.space</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           </a>
         </div>

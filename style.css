@@ -1855,7 +1855,14 @@ a.contact-card:hover svg { transform: translate(2px,-2px); color: var(--acid); }
 
 .column-header {
   text-align: center;
-  margin-bottom: 18px;
+  height: 40px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.validation-column .column-header {
+  height: 34px;
+  margin-bottom: 16px;
 }
 
 .column-header h3 {
@@ -1888,7 +1895,7 @@ a.contact-card:hover svg { transform: translate(2px,-2px); color: var(--acid); }
 .column-body {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 16px;
 }
 
 .diagram-card {
@@ -1902,6 +1909,15 @@ a.contact-card:hover svg { transform: translate(2px,-2px); color: var(--acid); }
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   min-height: 72px;
   box-sizing: border-box;
+}
+
+.onboard-column .diagram-card,
+.offboard-column .diagram-card {
+  height: 110px;
+}
+
+.validation-column .diagram-card {
+  height: 90px;
 }
 
 .diagram-card:hover {
@@ -1968,6 +1984,12 @@ a.contact-card:hover svg { transform: translate(2px,-2px); color: var(--acid); }
   .diagram-card {
     flex-direction: row;
     align-items: center;
+    height: auto !important;
+  }
+  
+  .column-header,
+  .validation-column .column-header {
+    height: auto !important;
   }
 }
 
