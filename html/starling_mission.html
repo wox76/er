@@ -367,11 +367,7 @@
         <p style="font-size: 18px; color: var(--muted); line-height: 1.6;">
           <strong>Experiment 2 (2024):</strong> Absolute orbit determination for a spacecraft swarm, using only inter-satellite bearing angles shared over a crosslink. Multi-observer measurements are seamlessly fused onboard to provide sufficient observability for autonomous maintenance of the swarm’s absolute orbit estimate, without GNSS.
         </p>
-        <div class="exp-bullets">
-          <div class="exp-bullet"><strong>Left:</strong> relative orbit geometry of involved swarm spacecraft. Black lines indicate crosslink transmissions.</div>
-          <div class="exp-bullet"><strong>Top:</strong> images from onboard star tracker cameras with objects tracked in the field of view.</div>
-          <div class="exp-bullet"><strong>Bottom:</strong> absolute (green) and relative (red/blue) orbit estimates for the swarm. Measurement sharing enables autonomous absolute orbit maintenance without GNSS.</div>
-        </div>
+
       </div>
     </section>
 
@@ -383,11 +379,7 @@
         <p style="font-size: 18px; color: var(--muted); line-height: 1.6;">
           <strong>Experiment 3 (2025):</strong> Identification and tracking of transient resident space objects (RSOs) in the field of view (FOV). An uplinked RSO catalog is used to identify RSOs in images and match them to identities in the Space-Track database. Residuals between optical measurements of RSOs and their reference positions available from ground products are primarily &lt;100 m. Thousands of RSOs have been identified on board.
         </p>
-        <div class="exp-bullets">
-          <div class="exp-bullet"><strong>Left:</strong> uplinked Space-Track catalog is used to identify RSOs (white squares) in flight.</div>
-          <div class="exp-bullet"><strong>Top right:</strong> residuals between optical measurements of RSOs and their reference positions available from various ground products. Residuals are primarily &lt;100 m.</div>
-          <div class="exp-bullet"><strong>Bottom right:</strong> total number of identified RSOs (&gt;150 during this experiment).</div>
-        </div>
+
       </div>
       <div class="exp-visual-box">
         <svg viewBox="0 0 200 200" style="width: 80%; height: auto;">
@@ -451,10 +443,7 @@
         <p style="font-size: 18px; color: var(--muted); line-height: 1.6;">
           <strong>Experiment 4 (2025):</strong> Fast initial orbit determination for unknown targets. Two observers track a common target for ~20 minutes, and measurements are shared between observers over the crosslink. An orbit initialization is computed for the target object. Orbit initialization errors were &lt;10% of target range.
         </p>
-        <div class="exp-bullets">
-          <div class="exp-bullet"><strong>Left:</strong> visualization of measurement geometry and algorithm progression.</div>
-          <div class="exp-bullet"><strong>Right:</strong> reconstructed images from the onboard cameras.</div>
-        </div>
+
       </div>
     </section>
 
@@ -466,10 +455,7 @@
         <p style="font-size: 18px; color: var(--muted); line-height: 1.6;">
           <strong>Experiment 5 (2025):</strong> Tip-and-cue for optical tracking of RSOs. Target state information is used on board to plan attitude changes which center the target in the FOV. For a particular swarm target with relative motion outside of the nominal observer FOV, hundreds of measurements were collected over a 1-day period, enabling consistent observation.
         </p>
-        <div class="exp-bullets">
-          <div class="exp-bullet"><strong>Left:</strong> a target object of interest is identified, tracked, and centered in the camera image. More than 200 target measurements are collected over 1-day period.</div>
-          <div class="exp-bullet"><strong>Bottom right:</strong> the target’s relative orbit (green) is regularly outside of the camera FOV (grey cone). An attitude plan is computed online to enable consistent target observation.</div>
-        </div>
+
       </div>
       <div class="exp-visual-box">
         <svg viewBox="0 0 200 200" style="width: 80%; height: auto;">
@@ -508,10 +494,7 @@
         <p style="font-size: 18px; color: var(--muted); line-height: 1.6;">
           <strong>Experiment 6 (2025):</strong> Tip-and-cue for optical tracking of RSOs. A list of RSOs to observe is provided to the satellite, which autonomously chooses an optimal target at each image epoch. The attitude of the camera is controlled online to ensure the target of interest is successfully imaged in the presence of other RSOs, maximizing field of regard. Measurements of more than 50 distinct targets of interest were collected over 1 day.
         </p>
-        <div class="exp-bullets">
-          <div class="exp-bullet"><strong>Left:</strong> target objects of interest are identified, tracked, and centered in the camera image. Measurements of more than 50 specified targets of interest are collected over a 1-day period.</div>
-          <div class="exp-bullet"><strong>Bottom right:</strong> the attitude of the camera FOV (grey cone) is controlled online to ensure the target of interest (green) is successfully imaged in the presence of other RSOs (red), maximizing field of regard.</div>
-        </div>
+
       </div>
     </section>
 
@@ -523,10 +506,7 @@
         <p style="font-size: 18px; color: var(--muted); line-height: 1.6;">
           <strong>Experiment 7 (2026):</strong> In-orbit demonstration of alternative PNT in LEO, independent from GPS/GNSS. Resident space objects are detected and identified in images using an RSO catalog, and are leveraged as passive optical beacons to estimate the position of the host satellite in real time. Mean positioning errors are less than 100 m.
         </p>
-        <div class="exp-bullets">
-          <div class="exp-bullet"><strong>Left:</strong> Resident Space Objects (RSOs) are detected and identified on board using an RSO catalog, and are leveraged as passive optical beacons to estimate the position of the host satellite in real time.</div>
-          <div class="exp-bullet"><strong>Bottom right:</strong> absolute orbit determination errors with respect to ex-post facto GPS products (black), the formal covariance from the on-board filter (gray), and the number of tracked RSO (red). Mean positioning errors are less than 100 m.</div>
-        </div>
+
       </div>
       <div class="exp-visual-box">
         <svg viewBox="0 0 200 200" style="width: 80%; height: auto;">
@@ -571,10 +551,7 @@
         <p style="font-size: 18px; color: var(--muted); line-height: 1.6;">
           <strong>Experiment 8 (2026):</strong> Online refinement of the RSO catalog. Measurements of identified RSOs in images are used to update the observer’s RSO catalog information, to prevent orbit information from becoming stale and guarantee robust positioning over long time periods. When referenced against Starlink ephemeris, online refinement was shown to reduce Starlink position errors by 50%, compared to Space-Track two-line elements.
         </p>
-        <div class="exp-bullets">
-          <div class="exp-bullet"><strong>Left:</strong> Resident Space Objects (RSOs) are detected and identified on board using an RSO catalog, and are leveraged as passive optical beacons to estimate the position of the host satellite in real time.</div>
-          <div class="exp-bullet"><strong>Bottom right:</strong> absolute orbit determination errors with respect to ex-post facto GPS products (black), the formal covariance from the on-board filter (gray), and the number of tracked RSO (red). Mean positioning errors are less than 100 m.</div>
-        </div>
+
       </div>
     </section>
 
@@ -586,11 +563,7 @@
         <p style="font-size: 18px; color: var(--muted); line-height: 1.6;">
           High-fidelity simulation of global space traffic monitoring (STM) performance via data aggregation from 400 EraDrive modules in orbit, distributed across existing satellite orbits.
         </p>
-        <div class="exp-bullets">
-          <div class="exp-bullet"><strong>Left:</strong> simulated views of the LEO RSO population for four specific observers.</div>
-          <div class="exp-bullet"><strong>Top right:</strong> positions of RSOs (red), EraDrive modules (green) and specific observers (cyan).</div>
-          <div class="exp-bullet"><strong>Bottom right:</strong> number of measurements and RSO observations across the constellation.</div>
-        </div>
+
       </div>
       <div class="exp-visual-box">
         <svg viewBox="0 0 200 200" style="width: 80%; height: auto;">
